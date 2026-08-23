@@ -33,10 +33,8 @@ export default function App() {
           {/* Main Content Area: Dedicated Scroll Containers */}
           <main className="w-full flex-1 overflow-hidden relative">
             {currentView === 'home' && (
-              <div className="w-full h-full flex items-center justify-center overflow-hidden">
-                <div className="relative w-full h-full max-w-[177.78vh] max-h-[56.25vw] aspect-video overflow-hidden">
-                  <Hero />
-                </div>
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+                <Hero setCurrentView={setCurrentView} />
               </div>
             )}
 
