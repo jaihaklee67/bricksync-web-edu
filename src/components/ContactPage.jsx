@@ -28,11 +28,40 @@ export const ContactPage = ({ setCurrentView }) => {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const selectedCategory = categories.find((c) => c.id === inquiryType)?.label || inquiryType;
+      await fetch('https://formsubmit.co/ajax/jaihaklee67@naver.com', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          Name: formData.name,
+          Organization: formData.organization || 'N/A',
+          Email: formData.email,
+          Phone: formData.phone || 'N/A',
+          Category: selectedCategory,
+          Message: formData.message,
+          _subject: `[BrickSync Inquiry] ${formData.name} - ${selectedCategory}`,
+          _template: 'table',
+          _captcha: 'false'
+        })
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Submission error:', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const resetForm = () => {
@@ -44,6 +73,7 @@ export const ContactPage = ({ setCurrentView }) => {
       message: '',
     });
     setSubmitted(false);
+    setIsSubmitting(false);
   };
 
   const categories = [
@@ -319,10 +349,20 @@ export const ContactPage = ({ setCurrentView }) => {
                     {/* Submit Button */}
                     <button
                       type="submit"
-                      className="w-full py-3.5 px-6 rounded-xl bg-[#08326e] hover:bg-[#0c408a] text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer active:scale-[0.995]"
+                      disabled={isSubmitting}
+                      className="w-full py-3.5 px-6 rounded-xl bg-[#08326e] hover:bg-[#0c408a] disabled:bg-slate-400 text-white font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer disabled:cursor-not-allowed active:scale-[0.995]"
                     >
-                      <Send className="w-4 h-4 text-amber-300" />
-                      <span>Submit Inquiry</span>
+                      {isSubmitting ? (
+                        <>
+                          <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                          <span>Sending Inquiry...</span>
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-4 h-4 text-amber-300" />
+                          <span>Submit Inquiry</span>
+                        </>
+                      )}
                     </button>
 
                   </form>
