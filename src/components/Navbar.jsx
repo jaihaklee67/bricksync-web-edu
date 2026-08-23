@@ -62,7 +62,8 @@ export const Navbar = ({ currentView, setCurrentView, isHeaderOnly = false }) =>
           })}
         </nav>
 
-        {/* Right Language Button Pill - 80% Scaled */}
+        {/* Right Language Button Pill (Temporarily Hidden) */}
+        {/*
         <div className="hidden md:flex items-center flex-shrink-0">
           <button
             onClick={toggleLang}
@@ -72,15 +73,18 @@ export const Navbar = ({ currentView, setCurrentView, isHeaderOnly = false }) =>
             <span>{t.languageBtn}</span>
           </button>
         </div>
+        */}
 
         {/* Mobile Hamburger Button */}
         <div className="flex md:hidden items-center gap-2">
+          {/*
           <button
             onClick={toggleLang}
             className="px-3 py-1.5 rounded-full bg-white text-[#0284c7] hover:bg-[#0284c7] hover:text-white border border-white hover:border-[#0284c7] font-medium text-xs font-poppins transition-colors duration-200"
           >
             {lang.toUpperCase()}
           </button>
+          */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-xl bg-white/20 text-white hover:bg-white/30 transition-colors"
