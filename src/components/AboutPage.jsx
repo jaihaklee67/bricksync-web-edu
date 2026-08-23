@@ -35,12 +35,31 @@ export const AboutPage = ({ setCurrentView }) => {
         </div>
 
         {/* Section 2: Core Pillars (about_3.png: 01 Phygital Bridge, 02 AI Learning, 03 Global Vision) */}
-        <div className="w-full max-w-[1440px] flex justify-center pt-6 pb-16 sm:pb-20 md:pb-28 px-4 sm:px-8">
+        <div className="w-full max-w-[1440px] flex justify-center pt-6 pb-12 sm:pb-16 px-4 sm:px-8">
           <img
             src="/images/about_section_03.png"
             alt="BrickSync Core Pillars - 01 Phygital Bridge, 02 AI Multimodal, 03 Global Creator Vision"
             className="w-full h-auto object-contain select-none pointer-events-none"
           />
+        </div>
+
+        {/* Section 3: Intro Video Section */}
+        <div className="w-full max-w-[1440px] flex flex-col items-center pb-20 sm:pb-24 px-4 sm:px-8">
+          {/* Title matching BrickSync 3 Core Components typography */}
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-tight text-center mb-6 sm:mb-8">
+            Bricksync intro Video
+          </h2>
+
+          {/* 16:9 Video Player matching width of 3 cards above */}
+          <div className="w-full aspect-video rounded-2xl md:rounded-3xl overflow-hidden bg-black/60 relative shadow-none">
+            <video
+              src="/images/Bricksync.mp4"
+              controls
+              playsInline
+              preload="metadata"
+              className="w-full h-full object-cover"
+            />
+          </div>
         </div>
       </div>
 
