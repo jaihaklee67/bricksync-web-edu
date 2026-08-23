@@ -45,9 +45,9 @@ export const AboutPage = ({ setCurrentView }) => {
 
         {/* Section 3: Intro Video Section */}
         <div className="w-full max-w-[1440px] flex flex-col items-center pb-20 sm:pb-24 px-4 sm:px-8">
-          {/* Title matching BrickSync 3 Core Components typography */}
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold text-white tracking-tight leading-tight text-center mb-6 sm:mb-8">
-            Bricksync intro Video
+          {/* Title matching BrickSync 3 Core Components exact typography & scale */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-[58px] xl:text-[66px] font-bold text-white tracking-tight leading-tight text-center mb-6 sm:mb-10">
+            BrickSync Intro Video
           </h2>
 
           {/* 16:9 Video Player matching width of 3 cards above */}
