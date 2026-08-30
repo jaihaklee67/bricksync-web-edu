@@ -43,10 +43,10 @@ export const Hero = () => {
         </div>
 
         {/* 6. Headline Text Graphic: logo_lego_cropped.png */}
-        <div className="absolute left-[6.5%] top-[33.5%] w-[42.0%] pointer-events-none select-none z-[4]">
+        <div className="absolute left-[6.5%] top-[31.0%] w-[40.5%] pointer-events-none select-none z-[4]">
           <img
             src="/images/logo_lego_cropped.png"
-            alt="The LEGO spike I built with my own hands comes to life in the world of LEGO FORTNITE Island!"
+            alt="The bricks I built with my hands comes to life in the world of LEGO FORTNITE Island!"
             className="w-full h-auto object-contain select-none"
           />
         </div>
