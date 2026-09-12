@@ -72,7 +72,7 @@ export const Footer = ({ setCurrentView }) => {
                 </button>
               </div>
               <p className="text-[11px] sm:text-xs text-white/55 leading-relaxed">
-                Copyright © 2026 BrickSync. All rights reserved.
+                © 2026 BrickSync (www.bricksync.org). All rights reserved.
               </p>
             </div>
           </div>
@@ -187,6 +187,13 @@ export const Footer = ({ setCurrentView }) => {
             </div>
           </div>
 
+        </div>
+
+        {/* Bottom Bar: Trademark & Sponsorship Disclaimer */}
+        <div className="mt-10 pt-6 border-t border-white/15">
+          <p className="text-[11px] sm:text-xs text-white/45 leading-relaxed text-justify">
+            LEGO® Education, LEGO® Education SPIKE™는 The LEGO Group의 상표입니다. Fortnite® 및 관련 상표는 Epic Games, Inc.의 상표입니다. 브릭싱크는 독립 교육 기업이며, The LEGO Group 또는 Epic Games, Inc.와 제휴하거나 이들의 후원·인증을 받지 않았습니다.
+          </p>
         </div>
 
       </div>

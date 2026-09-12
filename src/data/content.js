@@ -15,18 +15,18 @@ export const content = {
           title: "Technology",
           view: "about",
           submenu: [
-            { title: "BrickSyncApp", view: "about" },
-            { title: "QuickStart", view: "quickstart" },
-            { title: "Download", view: "download" }
+            { title: "브릭싱크 웹앱", view: "about" },
+            { title: "퀵스타트 가이드", view: "quickstart" },
+            { title: "다운로드", view: "download" }
           ]
         },
         {
           title: "Education",
           view: "education",
           submenu: [
-            { title: "LEGO Fortnite", view: "education" },
+            { title: "레고 포트나이트", view: "education" },
             { title: "UEFN&Verse", view: "uefn-verse" },
-            { title: "Unreal Engine", view: "unreal-engine" }
+            { title: "언리얼 엔진", view: "unreal-engine" }
           ]
         },
         {

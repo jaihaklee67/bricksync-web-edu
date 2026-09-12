@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Image as ImageIcon, Check } from 'lucide-react';
+import { Image as ImageIcon, Check, Star } from 'lucide-react';
 import { Footer } from './Footer';
 
 const COPY = {
@@ -14,7 +14,11 @@ const COPY = {
     journeyTitlePost: "",
     journeySubtitle: "5세부터 16+까지, 하나로 이어지는 BrickSync 성장 로드맵",
     campTitle: "레고 포트나이트 캠프 & 방과후 클래스",
-    campSubtitle: "유아와 초등생들을 위한 단기 레고 포트나이트 코스. 개별 교육 리포트 및 공식 수료증 발급",
+    campSubtitle: "유아와 초등생들을 위한 단기 레고 포트나이트 코스.\n개별 교육 리포트 및 공식 수료증 발급",
+    campSatisfactionLabel: "학생, 학부모님들의 만족 지수는 BrickSync 교육의 가치를 증명합니다.",
+    statIntro: "AI · 소프트웨어 개발 전문가의 커리큘럼 기반으로, 에픽게임즈 인증 언리얼 공인 강사(UAI)가 진행하는\n국내 유일의 '리얼타임 Physical AI' 교육으로 아이들의 컴퓨팅 사고능력과 창의력 향상을 약속합니다",
+    statLabel1: "Physical AI 교육 수료율",
+    statLabel2: "재수강률",
     campBannerTitle: "방학에도, 방과후에도 함께 모이자!\n레고 포트나이트 캠프에서!",
     campBannerDesc: "놀이·챌린지 기반 집중 캠프 — 매일 새로운 스토리로 조립하고 블록 코딩합니다",
     campCta: "캠프 자세히 보기"
@@ -29,7 +33,11 @@ const COPY = {
     journeyTitlePost: " by Age",
     journeySubtitle: "One continuous BrickSync growth roadmap, from age 5 to 16+",
     campTitle: "LEGO Fortnite Camp & After-School Classes",
-    campSubtitle: "A short-term LEGO Fortnite course for young children and elementary students. Individual progress reports and an official certificate of completion.",
+    campSubtitle: "A short-term LEGO Fortnite course for young children and elementary students.\nIndividual progress reports and an official certificate of completion.",
+    campSatisfactionLabel: "Class satisfaction rated directly by parents and students",
+    statIntro: "Built on a curriculum from AI and software development experts, led by Epic Games Certified Unreal Authorized Instructors (UAI) —\nKorea's only real-time Physical AI education, promising to grow every child's computational thinking and creativity.",
+    statLabel1: "Physical AI Course Completion Rate",
+    statLabel2: "Re-enrollment Rate",
     campBannerTitle: "Join us — school break or after school!\nAt the LEGO Fortnite Camp!",
     campBannerDesc: "An intensive, play- and challenge-based camp — a new story to build and code every day",
     campCta: "See the full camp"
@@ -41,13 +49,13 @@ const CAMP_DAYS = {
     { day: "Day 3", theme: "캠프파이어 인디언 파티", media: "3일차 — 캠프파이어 조립 사진", image: "/images/camp_day3_building.jpg" },
     { day: "Day 2", theme: "사파리 어드벤처", media: "2일차 — 사파리 텐트를 조립하는 사진", image: "/images/camp_day2_fortnite.jpg" },
     { day: "Day 1", theme: "야생 동물과 친구 되기", media: "1일차 — 동물 캐릭터를 조립하는 아이 사진", image: "/images/camp_day1_coding.jpg" },
-    { day: "Day 4", theme: "놀이공원", media: "4일차 — 놀이공원 그네를 조립하는 사진", image: "/images/camp_day4_blockcoding.jpg" }
+    { day: "Day 4", theme: "놀이공원", media: "4일차 — 놀이공원 그네를 조립하는 사진", image: "/images/camp_day4_blockcoding.jpg", imagePosition: "50% 10%" }
   ],
   en: [
     { day: "Day 3", theme: "Campfire Party", media: "Day 3 — building a campfire", image: "/images/camp_day3_building.jpg" },
     { day: "Day 2", theme: "Safari Adventure", media: "Day 2 — assembling a safari tent", image: "/images/camp_day2_fortnite.jpg" },
     { day: "Day 1", theme: "Making friends with wild animals", media: "Day 1 — a child assembling an animal character", image: "/images/camp_day1_coding.jpg" },
-    { day: "Day 4", theme: "Amusement Park", media: "Day 4 — building an amusement park swing", image: "/images/camp_day4_blockcoding.jpg" }
+    { day: "Day 4", theme: "Amusement Park", media: "Day 4 — building an amusement park swing", image: "/images/camp_day4_blockcoding.jpg", imagePosition: "50% 10%" }
   ]
 };
 
@@ -73,7 +81,7 @@ const STAGES = {
         "데이터 기반의 논리적 사고력과 프롬프트 활용법 습득",
         "UEFN(3D물리엔진)과 텍스트 블럭 코딩으로 나만의 3D 월드 제작"
       ],
-      bg: "#029DF7", text: "white", media: "8–11세 아이가 UEFN 크리에이티브 툴을 쓰는 사진", image: "/images/stage_creator_8_11.jpg"
+      bg: "#029DF7", text: "white", media: "8–11세 아이가 UEFN 크리에이티브 툴을 쓰는 사진", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%"
     },
     {
       age: "12–14세",
@@ -84,7 +92,7 @@ const STAGES = {
         "로봇이 스스로 생각하고 판단하는 AI 행동 알고리즘(상-행동-보상) 원리 체득",
         "Verse 전문 코딩으로 나만의 게임 규칙을 만들고 로봇 제어 시스템 완성"
       ],
-      bg: "#DE61FE", text: "white", media: "12–14세 학생이 Verse 코드를 작성하는 사진"
+      bg: "#DE61FE", text: "white", media: "12–14세 학생이 Verse 코드를 작성하는 사진", image: "/images/stage_innovator_12_14.jpg"
     },
     {
       age: "16세+",
@@ -95,7 +103,7 @@ const STAGES = {
         "학습된 AI 모델을 실제 로봇에 시스템으로 적용하기",
         "3D 게임 크리에이터를 넘어 실제 AI 로봇을 다루는 핵심 인재로 성장"
       ],
-      bg: "#000000", text: "white", media: "16세 이상 학생이 로봇에 모델을 이식하는 사진"
+      bg: "#000000", text: "white", media: "16세 이상 학생이 로봇에 모델을 이식하는 사진", image: "/images/stage_master_16plus.jpg"
     }
   ],
   en: [
@@ -119,7 +127,7 @@ const STAGES = {
         "Data-driven logical thinking and prompt-writing skills",
         "Build your own 3D world in UEFN with text-based block coding"
       ],
-      bg: "#029DF7", text: "white", media: "Photo of an 8–11 year old using UEFN creative tools", image: "/images/stage_creator_8_11.jpg"
+      bg: "#029DF7", text: "white", media: "Photo of an 8–11 year old using UEFN creative tools", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%"
     },
     {
       age: "Age 12–14",
@@ -130,7 +138,7 @@ const STAGES = {
         "Understanding the state-action-reward loop behind an AI robot's decision-making",
         "Write real Verse code to build your own game rules and complete a robot control system"
       ],
-      bg: "#DE61FE", text: "white", media: "Photo of a 12–14 year old writing Verse code"
+      bg: "#DE61FE", text: "white", media: "Photo of a 12–14 year old writing Verse code", image: "/images/stage_innovator_12_14.jpg"
     },
     {
       age: "Age 16+",
@@ -141,7 +149,7 @@ const STAGES = {
         "Deploying a trained AI model as a working system on a real robot",
         "Growing beyond a 3D game creator into a core talent who builds real AI robots"
       ],
-      bg: "#000000", text: "white", media: "Photo of a 16+ student deploying a model to a robot"
+      bg: "#000000", text: "white", media: "Photo of a 16+ student deploying a model to a robot", image: "/images/stage_master_16plus.jpg"
     }
   ]
 };
@@ -207,6 +215,9 @@ export const Hero = ({ setCurrentView }) => {
 
           <div className="relative z-10 max-w-[900px] mx-auto px-6 flex flex-col items-center text-center">
             <h2 className="text-[32px] sm:text-[52px] leading-tight font-extrabold text-white mb-3">
+              <span className="relative inline-flex items-center mr-1.5 sm:mr-2 -translate-y-3 sm:-translate-y-5">
+                <img src="/images/doodle_scribble.png" alt="" className="w-9 h-9 sm:w-[54px] sm:h-[54px] object-contain" />
+              </span>
               {t.journeyTitlePre}
               <span className="relative inline-block mx-1">
                 {t.journeyTitleHighlight}
@@ -215,6 +226,9 @@ export const Hero = ({ setCurrentView }) => {
                 </svg>
               </span>
               {t.journeyTitlePost}
+              <span className="relative inline-flex items-start ml-1 sm:ml-2 -translate-y-4 sm:-translate-y-6">
+                <img src="/images/doodle_wand.png" alt="" className="w-[42px] h-[42px] sm:w-[66px] sm:h-[66px] object-contain" />
+              </span>
             </h2>
             <p className="text-base sm:text-2xl font-semibold text-white/90 leading-snug">{t.journeySubtitle}</p>
           </div>
@@ -235,6 +249,13 @@ export const Hero = ({ setCurrentView }) => {
           }}
         >
 
+          <p className="text-[1.75rem] sm:text-[2rem] font-semibold text-black leading-snug text-center mb-4 whitespace-pre-line">
+            {t.statIntro}
+          </p>
+          <p className="text-lg sm:text-2xl font-semibold text-black leading-snug text-center mb-10 sm:mb-14">
+            {t.statLabel1} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>, {t.statLabel2} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>
+          </p>
+
         {/* Age-based learning journey cards */}
         <div className="w-full max-w-[1100px] flex flex-col items-center">
           <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-6">
@@ -248,7 +269,12 @@ export const Hero = ({ setCurrentView }) => {
                 {/* Photo strip */}
                 <div className={`relative w-full aspect-[21/9] flex-shrink-0 ${s.image ? '' : 'flex flex-col items-center justify-center gap-1.5 border-b-2 border-dashed border-black/10 bg-black/5 px-4 text-center'}`}>
                   {s.image ? (
-                    <img src={s.image} alt={`${s.age} - ${s.name}`} className="absolute inset-0 w-full h-full object-cover" />
+                    <img
+                      src={s.image}
+                      alt={`${s.age} - ${s.name}`}
+                      className="absolute inset-0 w-full h-full object-cover"
+                      style={s.imagePosition ? { objectPosition: s.imagePosition } : undefined}
+                    />
                   ) : (
                     <>
                       <ImageIcon className={`w-5 h-5 ${s.text === 'white' ? 'text-white/60' : 'text-black/40'}`} />
@@ -293,41 +319,66 @@ export const Hero = ({ setCurrentView }) => {
         </div>
 
         {/* Short-Term LEGO Fortnite Camp */}
-        <div className="w-full max-w-[1100px] flex flex-col items-center mt-16 sm:mt-24">
-          <h2 className="text-[48px] sm:text-[60px] leading-tight font-extrabold text-black mb-2 text-center">{t.campTitle}</h2>
-          <p className="text-[clamp(0.95rem,1.9vw,2rem)] leading-snug text-black/60 mb-10 sm:mb-14 text-center whitespace-normal lg:whitespace-nowrap">{t.campSubtitle}</p>
+        <div className="w-full flex flex-col items-center mt-16 sm:mt-24">
 
-          <div className="w-full grid grid-cols-1 lg:grid-cols-4 gap-x-1.5 gap-y-8 sm:gap-y-10">
-            {/* Banner card: text/CTA at top, photo fills the rest — square on mobile, stretches to match the two stacked cards on desktop */}
+          {/* Full-bleed colored panel behind the camp title block */}
+          <div className="relative w-screen left-1/2 -translate-x-1/2" style={{ backgroundColor: '#FBECFF' }}>
+            <div className="max-w-[1100px] mx-auto px-6 py-10 sm:py-14 flex flex-col items-center">
+              <h2 className="text-[48px] sm:text-[60px] leading-tight font-extrabold text-black mb-2 text-center">{t.campTitle}</h2>
+              <p className="text-[clamp(0.95rem,1.9vw,2rem)] leading-snug text-black mb-6 text-center whitespace-pre-line">{t.campSubtitle}</p>
+
+              <div className="flex flex-col items-center gap-3">
+                <div className="flex items-center gap-2.5">
+                  <div className="flex items-center">
+                    {[0, 1, 2, 3].map((i) => (
+                      <Star key={i} className="w-[30px] h-[30px] sm:w-9 sm:h-9 text-amber-400 fill-amber-400" />
+                    ))}
+                    <div className="relative w-[30px] h-[30px] sm:w-9 sm:h-9">
+                      <Star className="absolute inset-0 w-[30px] h-[30px] sm:w-9 sm:h-9 text-black/15 fill-black/10" />
+                      <div className="absolute inset-0 overflow-hidden" style={{ width: '80%' }}>
+                        <Star className="w-[30px] h-[30px] sm:w-9 sm:h-9 text-amber-400 fill-amber-400" />
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-2xl sm:text-3xl font-extrabold text-black">4.8/5</span>
+                </div>
+                <span className="text-sm sm:text-base text-black/60 whitespace-nowrap">{t.campSatisfactionLabel}</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="w-full max-w-[1100px] flex flex-col items-center mt-10 sm:mt-14">
+
+          <div className="w-full grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr] gap-x-1.5 gap-y-8 sm:gap-y-10">
+            {/* Banner card: text/CTA at top, photo fills the rest — narrower column so the portrait photo has no side letterboxing; day cards grow to fill the freed-up width */}
             <button
               onClick={() => setCurrentView && setCurrentView('education')}
-              className="relative w-full aspect-square lg:aspect-auto lg:col-span-2 lg:row-span-2 overflow-hidden text-left cursor-pointer outline-none flex flex-col"
+              className="relative w-full aspect-square lg:aspect-auto lg:row-span-2 overflow-hidden text-left cursor-pointer outline-none flex flex-col"
               style={{ backgroundColor: '#029DF7' }}
             >
-              <div className="relative z-10 p-6 pb-4 flex-shrink-0">
-                <span className="text-lg sm:text-2xl font-extrabold text-white leading-snug block mb-4 whitespace-pre-line drop-shadow-[0_1px_6px_rgba(0,0,0,0.25)]">
+              <div className="relative z-10 p-[clamp(1rem,3vw,1.5rem)] pb-[clamp(0.75rem,2vw,1rem)] flex-shrink-0">
+                <span className="text-[clamp(1.05rem,2.3vw,1.5rem)] font-extrabold text-white leading-snug block mb-[clamp(0.75rem,2vw,1rem)] whitespace-pre-line drop-shadow-[0_1px_6px_rgba(0,0,0,0.25)]">
                   {t.campBannerTitle}
                 </span>
-                <span className="block w-fit ml-auto px-5 py-2.5 rounded-full bg-white text-[#029DF7] font-bold text-sm">
+                <span className="block w-fit ml-auto px-[clamp(1rem,2.5vw,1.25rem)] py-[clamp(0.5rem,1.5vw,0.625rem)] rounded-full bg-white text-[#029DF7] font-bold text-[clamp(0.75rem,1.6vw,0.875rem)]">
                   {t.campCta} →
                 </span>
               </div>
 
-              {/* Photo fills remaining space */}
+              {/* Photo fills remaining space — contain so the full photo is always visible */}
               <div className="relative flex-1 overflow-hidden">
                 <img
                   src="/images/camp_certificate_ceremony.jpg"
                   alt="BrickSync camp graduation — students holding their certificates of completion"
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover object-top"
                 />
               </div>
             </button>
 
             {/* 4 small cards: label overlaid on the photo, KiwiCo-style, square corners, thin gaps */}
             {campDays.map((d, i) => {
-              const tapeColors = ['#F1FE61', '#DE61FE', '#029DF7'];
+              const tapeColors = ['#F1FE61', '#DE61FE', '#DE61FE', '#F1FE61'];
               const tapeColor = tapeColors[i % tapeColors.length];
-              const tapeText = tapeColor === '#F1FE61' ? '#000' : '#fff';
               const tapeDeg = i % 2 === 0 ? -4 : 4;
               return (
                 <div key={d.day} className="relative aspect-square">
@@ -342,7 +393,11 @@ export const Hero = ({ setCurrentView }) => {
                         src={d.image}
                         alt={`${d.day} - ${d.theme}`}
                         className="absolute inset-0 w-full h-full object-cover"
+                        style={d.imagePosition ? { objectPosition: d.imagePosition } : undefined}
                       />
+                    )}
+                    {d.image && (
+                      <div className="absolute bottom-0 left-0 right-0 h-1.5 sm:h-2 z-10" style={{ backgroundColor: tapeColor }} />
                     )}
                     {!d.image && (
                       <div className="absolute top-3 left-3 right-3 text-left">
@@ -356,7 +411,7 @@ export const Hero = ({ setCurrentView }) => {
                     )}
                   </div>
 
-                  {/* Tape label: sits outside the clipped box so it can straddle the top edge */}
+                  {/* Decorative washi-tape accent: sits outside the clipped box so it can straddle the top edge */}
                   {d.image && (
                     <div
                       className="absolute top-0 left-1/2 z-10"
@@ -366,20 +421,9 @@ export const Hero = ({ setCurrentView }) => {
                       }}
                     >
                       <div
-                        className="relative px-5 py-2"
-                        style={{
-                          backgroundColor: tapeColor,
-                          opacity: 0.93,
-                          clipPath:
-                            'polygon(0% 0%, 8% 12%, 2% 26%, 9% 40%, 3% 54%, 8% 68%, 2% 84%, 0% 100%, 100% 100%, 92% 88%, 98% 74%, 91% 60%, 97% 46%, 92% 32%, 98% 16%, 100% 0%)',
-                        }}
+                        className="relative w-16 sm:w-20 h-7 sm:h-8"
+                        style={{ backgroundColor: tapeColor, opacity: 0.85 }}
                       >
-                        <span
-                          className="relative z-10 text-xs sm:text-sm font-bold leading-snug whitespace-nowrap"
-                          style={{ color: tapeText }}
-                        >
-                          {d.day} · {d.theme}
-                        </span>
                         <div
                           className="absolute inset-0 pointer-events-none"
                           style={{
@@ -396,6 +440,7 @@ export const Hero = ({ setCurrentView }) => {
           </div>
         </div>
         </div>
+      </div>
       </div>
 
       <Footer setCurrentView={setCurrentView} />
