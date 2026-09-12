@@ -3,7 +3,11 @@ import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { AboutPage } from './components/AboutPage';
+import { CompanyPage } from './components/CompanyPage';
+import { ValuePage } from './components/ValuePage';
+import { VisionPage } from './components/VisionPage';
 import { EducationPage } from './components/EducationPage';
+import { ComingSoonPage } from './components/ComingSoonPage';
 import { QuickStartPage } from './components/QuickStartPage';
 import { DownloadPage } from './components/DownloadPage';
 import { ContactPage } from './components/ContactPage';
@@ -26,47 +30,99 @@ export default function App() {
         <div className="relative z-10 w-full h-full flex flex-col justify-start overflow-hidden">
           
           {/* Fixed Top Navbar across entire site */}
-          <div className="w-full flex-shrink-0 z-50 pt-[1.8%] pb-[1.4%] px-[4.8%] bg-transparent">
+          <div className="w-full flex-shrink-0 z-50 bg-white">
             <Navbar currentView={currentView} setCurrentView={setCurrentView} isHeaderOnly={true} />
           </div>
 
           {/* Main Content Area: Dedicated Scroll Containers */}
           <main className="w-full flex-1 overflow-hidden relative">
             {currentView === 'home' && (
-              <div className="w-full h-full flex items-center justify-center overflow-hidden">
-                <div className="relative w-full h-full max-w-[177.78vh] max-h-[56.25vw] aspect-video overflow-hidden">
-                  <Hero />
-                </div>
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+                <Hero setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'company' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <CompanyPage setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'value' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ValuePage setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'vision' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <VisionPage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'about' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <AboutPage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'education' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <EducationPage setCurrentView={setCurrentView} />
               </div>
             )}
 
+            {currentView === 'uefn-verse' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="uefn-verse" setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'unreal-engine' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="unreal-engine" setCurrentView={setCurrentView} />
+              </div>
+            )}
+
             {currentView === 'quickstart' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <QuickStartPage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'download' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <DownloadPage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'contact' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <ContactPage setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'news' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="news" setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'faq' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="faq" setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'privacy' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="privacy" setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'terms' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="terms" setCurrentView={setCurrentView} />
               </div>
             )}
           </main>

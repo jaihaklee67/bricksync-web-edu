@@ -2,11 +2,42 @@ export const content = {
   ko: {
     nav: {
       menu: [
-        { title: "About", href: "#about" },
-        { title: "Education", href: "#education" },
-        { title: "Quick Start", href: "#quick-start" },
-        { title: "Download", href: "#download" },
-        { title: "Contact", href: "#contact" }
+        {
+          title: "About",
+          view: "company",
+          submenu: [
+            { title: "브랜드 스토리", view: "company" },
+            { title: "교육 비전", view: "value" },
+            { title: "파트너십 & 인증", view: "vision" }
+          ]
+        },
+        {
+          title: "Technology",
+          view: "about",
+          submenu: [
+            { title: "BrickSyncApp", view: "about" },
+            { title: "QuickStart", view: "quickstart" },
+            { title: "Download", view: "download" }
+          ]
+        },
+        {
+          title: "Education",
+          view: "education",
+          submenu: [
+            { title: "LEGO Fortnite", view: "education" },
+            { title: "UEFN&Verse", view: "uefn-verse" },
+            { title: "Unreal Engine", view: "unreal-engine" }
+          ]
+        },
+        {
+          title: "Contact",
+          view: "contact",
+          submenu: [
+            { title: "알림 & 뉴스", view: "news" },
+            { title: "FAQ", view: "faq" },
+            { title: "1:1 상담 문의", view: "contact" }
+          ]
+        }
       ],
       languageBtn: "Language",
       islandCode: "7603-2493-0825",
@@ -342,11 +373,42 @@ export const content = {
   en: {
     nav: {
       menu: [
-        { title: "About", href: "#about" },
-        { title: "Education", href: "#education" },
-        { title: "Quick Start", href: "#quick-start" },
-        { title: "Download", href: "#download" },
-        { title: "Contact", href: "#contact" }
+        {
+          title: "About",
+          view: "company",
+          submenu: [
+            { title: "Brand Story", view: "company" },
+            { title: "Education Vision", view: "value" },
+            { title: "Partnerships & Certifications", view: "vision" }
+          ]
+        },
+        {
+          title: "Technology",
+          view: "about",
+          submenu: [
+            { title: "BrickSyncApp", view: "about" },
+            { title: "QuickStart", view: "quickstart" },
+            { title: "Download", view: "download" }
+          ]
+        },
+        {
+          title: "Education",
+          view: "education",
+          submenu: [
+            { title: "LEGO Fortnite", view: "education" },
+            { title: "UEFN&Verse", view: "uefn-verse" },
+            { title: "Unreal Engine", view: "unreal-engine" }
+          ]
+        },
+        {
+          title: "Contact",
+          view: "contact",
+          submenu: [
+            { title: "Notifications & News", view: "news" },
+            { title: "FAQ", view: "faq" },
+            { title: "1:1 Consultation", view: "contact" }
+          ]
+        }
       ],
       languageBtn: "Language",
       islandCode: "7603-2493-0825",
