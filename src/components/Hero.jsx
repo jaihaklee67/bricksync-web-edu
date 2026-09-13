@@ -6,6 +6,7 @@ import { Footer } from './Footer';
 const COPY = {
   ko: {
     title: "Make it Physical. Play it Digital.",
+    titleLine2: "Sync it with AI.",
     tagline: "AI 코딩으로 레고 에듀케이션 브릭과 포트나이트 메타버스 세계의 완벽한 연결",
     description: "세계 최초 리얼타임 Physical AI 교육, 지금 브릭싱크에서 시작해보세요!",
     journeyTitle: "연령별 브릭싱크 학습 로드맵",
@@ -16,7 +17,10 @@ const COPY = {
     campTitle: "레고 포트나이트 캠프 & 방과후 클래스",
     campSubtitle: "유아와 초등생들을 위한 단기 레고 포트나이트 코스.\n개별 교육 리포트 및 공식 수료증 발급",
     campSatisfactionLabel: "학생, 학부모님들의 만족 지수는 BrickSync 교육의 가치를 증명합니다.",
-    statIntro: "AI · 소프트웨어 개발 전문가의 커리큘럼 기반으로, 에픽게임즈 인증 언리얼 공인 강사(UAI)가 진행하는\n국내 유일의 '리얼타임 Physical AI' 교육으로 아이들의 컴퓨팅 사고능력과 창의력 향상을 약속합니다",
+    statIntro1: "AI · 소프트웨어 개발 전문가의 커리큘럼 기반으로,",
+    statIntro2: "에픽게임즈 인증 언리얼 공인 강사(UAI)가 진행하는",
+    statIntro3: "국내 유일의 '리얼타임 Physical AI' 교육으로",
+    statIntro4: "아이들의 컴퓨팅 사고능력과 창의력 향상을 약속합니다",
     statLabel1: "Physical AI 교육 수료율",
     statLabel2: "재수강률",
     campBannerTitle: "방학에도, 방과후에도 함께 모이자!\n레고 포트나이트 캠프에서!",
@@ -25,6 +29,7 @@ const COPY = {
   },
   en: {
     title: "Make it Physical. Play it Digital.",
+    titleLine2: "Sync it with AI.",
     tagline: "A perfect connection between LEGO Education bricks and the Fortnite metaverse, through AI coding",
     description: "The world's first real-time Physical AI education — start now, at BrickSync!",
     journeyTitle: "BrickSync Learning Roadmap by Age",
@@ -35,7 +40,10 @@ const COPY = {
     campTitle: "LEGO Fortnite Camp & After-School Classes",
     campSubtitle: "A short-term LEGO Fortnite course for young children and elementary students.\nIndividual progress reports and an official certificate of completion.",
     campSatisfactionLabel: "Class satisfaction rated directly by parents and students",
-    statIntro: "Built on a curriculum from AI and software development experts, led by Epic Games Certified Unreal Authorized Instructors (UAI) —\nKorea's only real-time Physical AI education, promising to grow every child's computational thinking and creativity.",
+    statIntro1: "Built on a curriculum from AI and software development experts,",
+    statIntro2: "led by Epic Games Certified Unreal Authorized Instructors (UAI) —",
+    statIntro3: "Korea's only real-time Physical AI education,",
+    statIntro4: "promising to grow every child's computational thinking and creativity.",
     statLabel1: "Physical AI Course Completion Rate",
     statLabel2: "Re-enrollment Rate",
     campBannerTitle: "Join us — school break or after school!\nAt the LEGO Fortnite Camp!",
@@ -179,8 +187,9 @@ export const Hero = ({ setCurrentView }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/55 pointer-events-none" />
 
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-6">
-          <h1 className="text-[clamp(2rem,4.7vw,6rem)] font-extrabold text-white tracking-tight leading-tight md:leading-none whitespace-normal md:whitespace-nowrap drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
-            {t.title}
+          <h1 className="text-[clamp(2rem,4.7vw,6rem)] font-extrabold text-white tracking-tight leading-tight md:leading-none drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
+            <span className="block whitespace-normal md:whitespace-nowrap">{t.title}</span>
+            <span className="block whitespace-normal md:whitespace-nowrap">{t.titleLine2}</span>
           </h1>
           <p className="mt-8 text-white text-xl sm:text-2xl md:text-3xl font-bold max-w-5xl leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
             {t.tagline}
@@ -249,8 +258,14 @@ export const Hero = ({ setCurrentView }) => {
           }}
         >
 
-          <p className="text-[1.75rem] sm:text-[2rem] font-semibold text-black leading-snug text-center mb-4 whitespace-pre-line">
-            {t.statIntro}
+          <p className="w-full text-[12px] min-[853px]:text-[36px] min-[1900px]:text-[44px] font-semibold text-black leading-snug text-center mb-4">
+            {t.statIntro1}
+            <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
+            {t.statIntro2}
+            <br />
+            {t.statIntro3}
+            <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
+            {t.statIntro4}
           </p>
           <p className="text-lg sm:text-2xl font-semibold text-black leading-snug text-center mb-10 sm:mb-14">
             {t.statLabel1} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>, {t.statLabel2} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>

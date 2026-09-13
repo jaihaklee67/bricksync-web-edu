@@ -6,8 +6,7 @@ export const content = {
           title: "About",
           view: "company",
           submenu: [
-            { title: "브랜드 스토리", view: "company" },
-            { title: "교육 비전", view: "value" },
+            { title: "교육 이념", view: "company" },
             { title: "파트너십 & 인증", view: "vision" }
           ]
         },
@@ -377,8 +376,7 @@ export const content = {
           title: "About",
           view: "company",
           submenu: [
-            { title: "Brand Story", view: "company" },
-            { title: "Education Vision", view: "value" },
+            { title: "Education Philosophy", view: "company" },
             { title: "Partnerships & Certifications", view: "vision" }
           ]
         },
