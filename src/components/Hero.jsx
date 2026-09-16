@@ -187,14 +187,14 @@ export const Hero = ({ setCurrentView }) => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/55 pointer-events-none" />
 
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-6">
-          <h1 className="text-[clamp(2rem,4.7vw,6rem)] font-extrabold text-white tracking-tight leading-tight md:leading-none drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
-            <span className="block whitespace-normal md:whitespace-nowrap">{t.title}</span>
-            <span className="block whitespace-normal md:whitespace-nowrap">{t.titleLine2}</span>
+          <h1 className="text-[clamp(1rem,5.8vw,6rem)] font-extrabold text-white tracking-tight leading-tight md:leading-none drop-shadow-[0_2px_20px_rgba(0,0,0,0.45)]">
+            <span className="block whitespace-nowrap">{t.title}</span>
+            <span className="block whitespace-nowrap">{t.titleLine2}</span>
           </h1>
-          <p className="mt-8 text-white text-xl sm:text-2xl md:text-3xl font-bold max-w-5xl leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
+          <p className="mt-8 text-white text-[clamp(0.5rem,2.85vw,1.875rem)] font-bold whitespace-nowrap leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
             {t.tagline}
           </p>
-          <p className="mt-3 text-white text-xl sm:text-2xl md:text-3xl font-bold max-w-5xl leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
+          <p className="mt-3 text-white text-[clamp(0.5rem,2.85vw,1.875rem)] font-bold whitespace-nowrap leading-snug drop-shadow-[0_1px_8px_rgba(0,0,0,0.35)]">
             {t.description}
           </p>
         </div>
@@ -223,9 +223,9 @@ export const Hero = ({ setCurrentView }) => {
           <span className="absolute top-6 right-[30%] w-2.5 h-2.5 rounded-full bg-white/80 pointer-events-none" />
 
           <div className="relative z-10 max-w-[900px] mx-auto px-6 flex flex-col items-center text-center">
-            <h2 className="text-[32px] sm:text-[52px] leading-tight font-extrabold text-white mb-3">
+            <h2 className="text-[clamp(1rem,5.8vw,3.25rem)] leading-tight font-extrabold text-white mb-3 whitespace-nowrap">
               <span className="relative inline-flex items-center mr-1.5 sm:mr-2 -translate-y-3 sm:-translate-y-5">
-                <img src="/images/doodle_scribble.png" alt="" className="w-9 h-9 sm:w-[54px] sm:h-[54px] object-contain" />
+                <img src="/images/doodle_scribble.png" alt="" className="w-[1.1em] h-[1.1em] object-contain" />
               </span>
               {t.journeyTitlePre}
               <span className="relative inline-block mx-1">
@@ -236,10 +236,10 @@ export const Hero = ({ setCurrentView }) => {
               </span>
               {t.journeyTitlePost}
               <span className="relative inline-flex items-start ml-1 sm:ml-2 -translate-y-4 sm:-translate-y-6">
-                <img src="/images/doodle_wand.png" alt="" className="w-[42px] h-[42px] sm:w-[66px] sm:h-[66px] object-contain" />
+                <img src="/images/doodle_wand.png" alt="" className="w-[1.3em] h-[1.3em] object-contain" />
               </span>
             </h2>
-            <p className="text-base sm:text-2xl font-semibold text-white/90 leading-snug">{t.journeySubtitle}</p>
+            <p className="text-[clamp(0.6rem,3.3vw,1.5rem)] font-semibold text-white/90 leading-snug whitespace-nowrap">{t.journeySubtitle}</p>
           </div>
 
           {/* bottom wave transition into white */}
@@ -258,7 +258,7 @@ export const Hero = ({ setCurrentView }) => {
           }}
         >
 
-          <p className="w-full text-[12px] min-[853px]:text-[36px] min-[1900px]:text-[44px] font-semibold text-black leading-snug text-center mb-4">
+          <p className="w-full text-[clamp(0.44rem,2.88vw,1.8rem)] min-[853px]:text-[28.8px] min-[1900px]:text-[35.2px] font-semibold text-black leading-snug text-center mb-4 break-keep whitespace-nowrap">
             {t.statIntro1}
             <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
             {t.statIntro2}
@@ -267,8 +267,8 @@ export const Hero = ({ setCurrentView }) => {
             <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
             {t.statIntro4}
           </p>
-          <p className="text-lg sm:text-2xl font-semibold text-black leading-snug text-center mb-10 sm:mb-14">
-            {t.statLabel1} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>, {t.statLabel2} <span className="text-[1.6875rem] sm:text-[2.25rem] font-extrabold">100%</span>
+          <p className="text-[clamp(0.4rem,2.4vw,1.5rem)] min-[853px]:text-[24px] min-[1900px]:text-[29.33px] font-semibold text-black leading-snug text-center mb-10 sm:mb-14 break-keep whitespace-nowrap">
+            {t.statLabel1} <span className="text-[1.5em] font-extrabold">100%</span>, {t.statLabel2} <span className="text-[1.5em] font-extrabold">100%</span>
           </p>
 
         {/* Age-based learning journey cards */}
@@ -321,7 +321,7 @@ export const Hero = ({ setCurrentView }) => {
                     {s.bullets.map((b) => (
                       <li key={b} className="flex items-start gap-2">
                         <Check className={`w-4 h-4 mt-0.5 flex-shrink-0 ${s.text === 'white' ? 'text-white/70' : 'text-black/60'}`} />
-                        <span className={`text-xs sm:text-sm leading-relaxed ${s.text === 'white' ? 'text-white/80' : 'text-black/70'}`}>
+                        <span className={`text-xs sm:text-sm leading-relaxed text-balance break-keep ${s.text === 'white' ? 'text-white/80' : 'text-black/70'}`}>
                           {b}
                         </span>
                       </li>
@@ -337,10 +337,10 @@ export const Hero = ({ setCurrentView }) => {
         <div className="w-full flex flex-col items-center mt-16 sm:mt-24">
 
           {/* Full-bleed colored panel behind the camp title block */}
-          <div className="relative w-screen left-1/2 -translate-x-1/2" style={{ backgroundColor: '#FBECFF' }}>
+          <div className="w-[calc(100%+3rem)] -mx-6" style={{ backgroundColor: '#FBECFF' }}>
             <div className="max-w-[1100px] mx-auto px-6 py-10 sm:py-14 flex flex-col items-center">
-              <h2 className="text-[48px] sm:text-[60px] leading-tight font-extrabold text-black mb-2 text-center">{t.campTitle}</h2>
-              <p className="text-[clamp(0.95rem,1.9vw,2rem)] leading-snug text-black mb-6 text-center whitespace-pre-line">{t.campSubtitle}</p>
+              <h2 className="text-[clamp(0.8rem,5vw,3.75rem)] leading-tight font-extrabold text-black mb-2 text-center whitespace-nowrap">{t.campTitle}</h2>
+              <p className="text-[clamp(0.75rem,1.75vw,2rem)] leading-snug text-black mb-6 text-center whitespace-pre-line">{t.campSubtitle}</p>
 
               <div className="flex flex-col items-center gap-3">
                 <div className="flex items-center gap-2.5">
@@ -357,7 +357,7 @@ export const Hero = ({ setCurrentView }) => {
                   </div>
                   <span className="text-2xl sm:text-3xl font-extrabold text-black">4.8/5</span>
                 </div>
-                <span className="text-sm sm:text-base text-black/60 whitespace-nowrap">{t.campSatisfactionLabel}</span>
+                <span className="text-[clamp(0.55rem,2.8vw,1rem)] text-black/60 whitespace-nowrap">{t.campSatisfactionLabel}</span>
               </div>
             </div>
           </div>

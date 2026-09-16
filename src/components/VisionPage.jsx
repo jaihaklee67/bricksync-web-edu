@@ -1,208 +1,267 @@
 import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
-import { Rocket, Sparkles, Cpu, Puzzle, Globe2, Image as ImageIcon, Map } from 'lucide-react';
 import { Footer } from './Footer';
-import { MediaPlaceholder } from './MediaPlaceholder';
 
 const COPY = {
   ko: {
-    eyebrow: "ROADMAP & VISION",
-    title: "우리가 나아갈 방향",
-    lead: "BrickSync는 나이에 맞춰 코딩의 첫 성취에서 강화학습 실천까지, 하나로 이어지는 4단계 성장 여정을 만들어가고 있습니다.",
-    stagesTitle: "연령별 4단계 성장 로드맵",
-    stages: [
-      {
-        stage: "Stage 1",
-        age: "5–7세",
-        title: "Build it & it moves",
-        desc: "조립한 블록 순서가 그대로 포트나이트 속 움직임으로 재현되는, 코딩의 첫 성취 경험.",
-        media: "SPIKE Essential 키트 사진"
-      },
-      {
-        stage: "Stage 2",
-        age: "8–11세",
-        title: "Data-driven thinking & world-building",
-        desc: "브라우저 AI 인식(MediaPipe)과 음성 프롬프트로 Verse 호환 블록 코딩을 구성하고, UEFN 크리에이티브 툴로 직접 스테이지를 제작합니다.",
-        media: "SPIKE Prime 키트 사진"
-      },
-      {
-        stage: "Stage 3",
-        age: "12–14세",
-        title: "Collect data, teach behavior & transition to Verse",
-        desc: "센서 데이터로 UEFN 디지털 트윈을 학습시키는 양방향 파이프라인을 경험하며, Gymnasium 표준 AI 학습 루프(관찰–행동–보상)를 익히고 첫 Verse 코드를 작성합니다.",
-        media: "Science & AI 키트 사진"
-      },
-      {
-        stage: "Stage 4",
-        age: "16세+",
-        title: "Train virtually & implant",
-        desc: "Python Gym 환경에서 강화학습(PPO)으로 모델을 학습시키고, 이를 실제 로봇에 이식해 현실과의 격차를 측정합니다 — Fortnite 창작자이자 RL 실천가로 완성됩니다.",
-        media: "Technic/Mindstorms 로봇 사진"
-      }
+    eyebrow: "Global Standard Physical AI Education",
+    title: "Physical AI 기술력과 공신력을 지닌\nBrickSync 교육",
+    body: "브릭싱크는 세계 최고 수준의 AI기반 3D 엔진 기술력을 가진 에픽게임즈(Epic Games)의 공인 인프라와 첨단 기술, 그리고 검증된 자체 교재 라인업을 결합하여 가장 안전하고 확실한 차세대 융합 교육 프로그램을 제공합니다.",
+    badgesTitle: "에픽게임즈 공식 인증 교육 환경",
+    badges: [
+      { image: "/images/vision_badge_uai.png", title: "Epic Games 공인강사 (UAI)\n레고 포트나이트 교육 직강", desc: "에픽게임즈의 심사를 통해 검증된 공인 강사들이 직접 교육 과정 및 커리큘럼을 설계, 지도" },
+      { image: "/images/vision_badge_lego.png", title: "LEGO Fortnite 공식 검증\n커리큘럼 & 교구", desc: "LEGO®와 Fortnite®의 공식 가이드라인을 준수하여 개발한 교육용 웹앱 BrickSync 및 UEFN 에디터 제공" },
+      { image: "/images/vision_badge_certificate.png", title: "레고 포트나이트 코스\n공식 수료증 발급", desc: "교육 수료생에게는 에픽게임즈 포트나이트 공식 로고가 명시된 수료증(Certificate)이 발급" },
     ],
-    contentDirTitle: "교육 콘텐츠 확장 방향",
-    contentDir: [
-      { title: "생성형 AI 프롬프팅·AI 리터러시 확장", desc: "자연어·음성 기반 프롬프트 엔지니어링 커리큘럼을 확장합니다." },
-      { title: "Gymnasium ML/RL·Verse 스크립팅 표준화", desc: "PPO/DQN 강화학습 에이전트와 UEFN 시각화를 결합한 표준 연구 환경을 구축합니다." },
-      { title: "하드웨어·맵·크리에이터 생태계 확장", desc: "SPIKE Essential/Prime/Science & AI/Technic 등 지원 하드웨어와 맵, 크리에이터 생태계를 확장합니다." }
+    aiSectionTitle: "AI 전문 연구진 기반의 교육 솔루션 설계",
+    aiSectionBody: "AI·SW 공학 전문 연구진이 교구 및 알고리즘 개발에 참여하여, 단순 체험을 넘어선 수준 높은 AI 학습 구조를 구축했습니다.",
+    aiLeft: {
+      captionImage: "/images/vision_ai_caption_left.png",
+      captionWidthPct: 77.9,
+      captionTitle: "웹 기반 실시간 AI 인식 기술\n(Web Bluetooth & Vision AI)",
+      graphic: "/images/vision_ai_letter_left.png",
+    },
+    aiRight: {
+      captionImage: "/images/vision_ai_caption_right.png",
+      captionWidthPct: 61.5,
+      captionTitle: "체계적인 AI 리터러시\n& 컴퓨팅 사고력(CT) 체득",
+      graphic: "/images/vision_ai_letter_right.png",
+    },
+    booksTitle: "자체 개발 정식 출판 교재 라인업",
+    booksBody: "LEGO Fortnite 유아 블록 코딩부터 전문 UEFN Verse 언어 활용 Physical AI 콘텐츠 개발까지, 연령에 따른 성장 단계별 난이도에 맞춰진 체계적 학습 교재들은 브릭싱크 교육을 더욱 탄탄하게 해줍니다.",
+    books: [
+      {
+        level: "1",
+        image: "/images/vision_book_1.png",
+        pillColor: "#E2CDF7",
+        levelColor: "#8C52FF",
+        title: "LEGO® 와 Fortnite로 만드는 코딩 세상",
+        desc: "레고브릭을 이용한 스토리텔링과 블럭코딩 기반 메타버스 인터랙션을 결합하여 유아 및 초등 저학년의 흥미를 이끄는 기초 단계 워크북.",
+      },
+      {
+        level: "2",
+        image: "/images/vision_book_2.png",
+        pillColor: "#C8EEFF",
+        levelColor: "#0371C2",
+        title: "LEGO® 와 UEFN으로 만드는 코딩 세상",
+        desc: "복잡한 모터 및 센서 장치들이 활용되는 실물 브릭을 작동하기 위한 텍스트 코딩과 기초 Verse 학습으로 UEFN 가상 공간과 연동하는 본격적 Physical AI 기초 코딩 학습서.",
+      },
+      {
+        level: "3",
+        image: "/images/vision_book_3.png",
+        pillColor: "#F1FE61",
+        levelColor: "#343E43",
+        title: "UEFN 실전가이드 book",
+        desc: "Verse 언어 기초부터 UEFN 에디터 사용의 깊이 있는 것까지, 포트나이트 맵 퍼블리싱에 도전하기 위한 프로페셔널 포트나이트 크리에이터 실전 지침서.",
+      },
     ],
-    businessDirTitle: "비즈니스 확장 방향",
-    businessDirDesc: "한국에서 검증한 교육 모델을 Epic의 전 세계 UAI(Unreal Authorized Instructor) 네트워크를 통해 표준화된 형태로 확산합니다.",
-    mapMediaLabel: "한국 → APAC → 글로벌 확장 경로를 보여주는 지도 그래픽",
-    regions: [
-      { region: "Region A", place: "대한민국", desc: "이미 검증된 시장 — 파일럿 수업, UAI 네트워크, LEGO SPIKE 방과후 인프라 확보" },
-      { region: "Region B", place: "아시아태평양(APAC)", desc: "교육용 로보틱스 시장에서 가장 빠르게 성장 중인 지역 — 국가별 STEAM·AI 리터러시 기준에 맞춰 현지화" },
-      { region: "Region C", place: "글로벌", desc: "APAC에서 검증한 지역 이식 모델을 전 세계로 확장 — 피지컬 AI·코딩 학습 도구의 글로벌 표준을 지향" }
-    ]
   },
   en: {
-    eyebrow: "ROADMAP & VISION",
-    title: "Where We're Headed",
-    lead: "BrickSync is building one continuous growth journey — from a child's first coding win to real reinforcement-learning practice — across four age-tiered stages.",
-    stagesTitle: "4-Stage Growth Roadmap by Age",
-    stages: [
-      {
-        stage: "Stage 1",
-        age: "Age 5–7",
-        title: "Build it & it moves",
-        desc: "The sequence a child assembles in blocks is mirrored live as movement inside Fortnite — a first taste of what coding achieves.",
-        media: "SPIKE Essential kit photo"
-      },
-      {
-        stage: "Stage 2",
-        age: "Age 8–11",
-        title: "Data-driven thinking & world-building",
-        desc: "Students compose Verse-compatible block coding using browser-based AI recognition (MediaPipe) and voice prompting, and build their own stages with UEFN creative tools.",
-        media: "SPIKE Prime kit photo"
-      },
-      {
-        stage: "Stage 3",
-        age: "Age 12–14",
-        title: "Collect data, teach behavior & transition to Verse",
-        desc: "A bidirectional pipeline trains a UEFN digital twin from sensor data, teaching the core AI loop (observation–action–reward) used in Gymnasium, and students write their first Verse code.",
-        media: "Science & AI kit photo"
-      },
-      {
-        stage: "Stage 4",
-        age: "Age 16+",
-        title: "Train virtually & implant",
-        desc: "Students train a model with reinforcement learning (PPO) in a Python Gym environment, then deploy it to a real robot and measure the sim-to-real gap — graduating as both a Fortnite creator and an RL practitioner.",
-        media: "Technic / Mindstorms robot photo"
-      }
+    eyebrow: "Global Standard Physical AI Education",
+    title: "BrickSync Education, Backed by\nPhysical AI Technology and Credibility",
+    body: "BrickSync combines Epic Games' officially authorized infrastructure and advanced technology — built on the world's leading AI-driven 3D engine — with a proven, self-developed curriculum lineup to deliver the safest, most reliable next-generation convergence education program.",
+    badgesTitle: "Officially Epic Games–Certified Education Environment",
+    badges: [
+      { image: "/images/vision_badge_uai.png", title: "Epic Games Authorized Instructor (UAI)\nLive LEGO Fortnite Instruction", desc: "Instructors verified through Epic Games' rigorous review personally design and lead the curriculum and course." },
+      { image: "/images/vision_badge_lego.png", title: "Officially Verified LEGO Fortnite\nCurriculum & Courseware", desc: "The BrickSync web app and UEFN editor were built to LEGO®'s and Fortnite®'s official guidelines." },
+      { image: "/images/vision_badge_certificate.png", title: "Official Certificate Upon\nCompleting the LEGO Fortnite Course", desc: "Graduates receive a certificate bearing the official Epic Games Fortnite logo." },
     ],
-    contentDirTitle: "Curriculum Expansion Direction",
-    contentDir: [
-      { title: "Generative AI prompting & AI literacy", desc: "Expanding natural-language and voice-based prompt engineering curriculum." },
-      { title: "Gymnasium ML/RL & Verse scripting standard", desc: "Building a standard research environment pairing PPO/DQN reinforcement learning agents with UEFN visualization." },
-      { title: "Hardware, maps & creator ecosystem", desc: "Expanding supported hardware (SPIKE Essential/Prime/Science & AI/Technic), maps, and the creator ecosystem." }
+    aiSectionTitle: "Education Solutions Designed by\nExpert AI Research Engineers",
+    aiSectionBody: "Our AI/SW engineering research team takes part directly in developing the courseware and algorithms, building a sophisticated AI learning structure that goes beyond simple hands-on experience.",
+    aiLeft: {
+      captionImage: "/images/vision_ai_caption_left.png",
+      captionWidthPct: 77.9,
+      captionTitle: "Real-Time Web-Based AI Recognition\n(Web Bluetooth & Vision AI)",
+      graphic: "/images/vision_ai_letter_left.png",
+    },
+    aiRight: {
+      captionImage: "/images/vision_ai_caption_right.png",
+      captionWidthPct: 61.5,
+      captionTitle: "Systematic AI Literacy &\nComputational Thinking (CT)",
+      graphic: "/images/vision_ai_letter_right.png",
+    },
+    booksTitle: "Officially Published, Self-Developed Curriculum",
+    booksBody: "From early-childhood LEGO Fortnite block coding to advanced UEFN Verse–powered Physical AI content development, our systematic textbooks — matched to each growth stage — make BrickSync education even stronger.",
+    books: [
+      {
+        level: "1",
+        image: "/images/vision_book_1.png",
+        pillColor: "#E2CDF7",
+        levelColor: "#8C52FF",
+        title: "Coding World Made with LEGO® and Fortnite",
+        desc: "A foundational workbook combining LEGO-brick storytelling with block-coding-based metaverse interaction, designed to spark interest in early-childhood and lower-elementary learners.",
+      },
+      {
+        level: "2",
+        image: "/images/vision_book_2.png",
+        pillColor: "#C8EEFF",
+        levelColor: "#0371C2",
+        title: "Coding World Made with LEGO® and UEFN",
+        desc: "A hands-on Physical AI coding textbook covering text-based coding and foundational Verse to operate real bricks with complex motors and sensors, linking them to the UEFN virtual space.",
+      },
+      {
+        level: "3",
+        image: "/images/vision_book_3.png",
+        pillColor: "#F1FE61",
+        levelColor: "#343E43",
+        title: "UEFN Practical Guide Book",
+        desc: "A professional Fortnite creator's field guide — from the basics of the Verse language to in-depth UEFN editor use — for anyone taking on the challenge of publishing a Fortnite map.",
+      },
     ],
-    businessDirTitle: "Business Expansion Direction",
-    businessDirDesc: "Scaling the education model proven in Korea into a standardized offering through Epic's worldwide UAI (Unreal Authorized Instructor) network.",
-    mapMediaLabel: "Map graphic showing the Korea → APAC → Global expansion path",
-    regions: [
-      { region: "Region A", place: "South Korea", desc: "An already-proven market — pilot classes, a UAI network, and existing LEGO SPIKE after-school infrastructure" },
-      { region: "Region B", place: "APAC", desc: "The fastest-growing region in educational robotics — localized to each country's STEAM & AI literacy standards" },
-      { region: "Region C", place: "Global", desc: "Extending the region-proven transplant model worldwide, toward becoming the global standard for phygital AI & coding learning tools" }
-    ]
   }
 };
 
 export const VisionPage = ({ setCurrentView }) => {
   const { lang } = useLanguage();
   const t = COPY[lang];
-  const contentIcons = [Sparkles, Cpu, Puzzle];
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center justify-between select-none font-poppins">
-      <div className="w-full flex flex-col items-center flex-1 py-8 sm:py-12 md:py-14 px-4 sm:px-8 md:px-12">
+    <div className="w-full min-h-full flex flex-col items-center select-none font-poppins bg-white">
+      <img
+        src="/images/vision_hero_banner.jpg"
+        alt="BrickSync office — Creative Physical AI Education & Platform"
+        className="w-full h-auto object-cover aspect-[2400/759]"
+      />
 
-        <div className="w-full max-w-[900px] flex flex-col items-center text-center mb-12 sm:mb-16">
-          <span className="inline-block text-xs sm:text-sm font-mono font-bold text-white uppercase tracking-widest mb-4 px-4 py-1.5 rounded-full bg-[#0b192e]/50 border border-cyan-200/30">
+      <div className="w-full flex flex-col items-center text-center py-12 sm:py-16 md:py-20 px-6">
+        {lang === 'ko' ? (
+          <img
+            src="/images/vision_trust_eyebrow.png"
+            alt={t.eyebrow}
+            className="w-full max-w-[617px] h-auto object-contain mb-4 sm:mb-6"
+          />
+        ) : (
+          <span className="text-black font-bold break-keep text-[clamp(0.8rem,1.6vw,1.15rem)] mb-4 sm:mb-6">
             {t.eyebrow}
           </span>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-white tracking-tight mb-6 sm:mb-8 drop-shadow-[0_2px_10px_rgba(0,0,0,0.35)]">
+        )}
+        {lang === 'ko' ? (
+          <img
+            src="/images/vision_trust_title.png"
+            alt={t.title.replace('\n', ' ')}
+            className="w-full max-w-[902px] h-auto object-contain mb-6 sm:mb-8"
+          />
+        ) : (
+          <h2 className="text-blue-600 font-extrabold leading-snug whitespace-pre-line break-keep text-[clamp(1.3rem,3.4vw,2.5rem)] mb-6 sm:mb-8">
             {t.title}
-          </h1>
-          <p className="text-white text-lg sm:text-xl leading-relaxed font-medium drop-shadow-[0_1px_6px_rgba(0,0,0,0.3)]">
-            {t.lead}
-          </p>
-        </div>
-
-        {/* 4-Stage Roadmap */}
-        <div className="w-full max-w-[1200px] flex flex-col items-center mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 sm:mb-10 text-center">
-            {t.stagesTitle}
           </h2>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-            {t.stages.map((s) => (
-              <div
-                key={s.stage}
-                className="rounded-3xl bg-[#0b192e]/40 border border-white/20 overflow-hidden flex flex-col"
-              >
-                <MediaPlaceholder icon={ImageIcon} label={s.media} aspect="aspect-square" className="rounded-none border-x-0 border-t-0 !rounded-t-3xl" />
-                <div className="p-5 sm:p-6 flex flex-col gap-3">
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs font-mono font-bold text-cyan-200 uppercase tracking-wider">{s.stage}</span>
-                    <span className="text-xs sm:text-sm font-semibold text-amber-200 bg-amber-500/15 border border-amber-300/30 rounded-full px-2.5 py-0.5">{s.age}</span>
-                  </div>
-                  <h3 className="text-base sm:text-lg font-bold text-white leading-snug">{s.title}</h3>
-                  <p className="text-sm sm:text-base text-white/90 leading-relaxed">{s.desc}</p>
-                </div>
+        )}
+        <p className="text-black leading-relaxed text-balance break-keep text-[clamp(0.85rem,1.5vw,1.15rem)] max-w-[1000px] mb-10 sm:mb-14">
+          {t.body}
+        </p>
+        <img
+          src="/images/vision_trust_illustration.png"
+          alt="Unreal Engine and Fortnite authorized instructor illustration"
+          className="w-full max-w-[900px] h-auto object-contain mb-16 sm:mb-24"
+        />
+
+        <h2 className="w-full max-w-[1200px] text-center text-black font-bold whitespace-nowrap break-keep text-[clamp(0.5rem,4.5vw,2.625rem)] mb-6 sm:mb-8">
+          {t.badgesTitle}
+        </h2>
+
+        {lang === 'ko' ? (
+          <div className="w-full max-w-[1200px] grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {t.badges.map((b) => (
+              <img
+                key={b.image}
+                src={b.image}
+                alt={b.title.replace('\n', ' ')}
+                className="w-full h-auto object-contain"
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="w-full max-w-[1200px] grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {t.badges.map((b) => (
+              <div key={b.title} className="rounded-2xl border border-gray-200 p-6 flex flex-col items-center text-center gap-3">
+                <h3 className="text-black font-bold leading-snug whitespace-pre-line break-keep text-[clamp(0.95rem,1.8vw,1.15rem)]">
+                  {b.title}
+                </h3>
+                <p className="text-black/70 leading-relaxed text-balance break-keep text-[clamp(0.8rem,1.4vw,1rem)]">
+                  {b.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div className="w-full max-w-[1200px] flex flex-col items-center text-center mt-16 sm:mt-24">
+          {lang === 'ko' ? (
+            <img
+              src="/images/vision_ai_section_title.png"
+              alt={t.aiSectionTitle}
+              className="w-full max-w-[707px] h-auto object-contain mb-4 sm:mb-6"
+            />
+          ) : (
+            <h2 className="text-black font-extrabold leading-snug whitespace-pre-line break-keep text-[clamp(1.15rem,3vw,2.625rem)] mb-4 sm:mb-6">
+              {t.aiSectionTitle}
+            </h2>
+          )}
+          <p className="text-black leading-relaxed text-balance break-keep text-[clamp(0.8rem,1.4vw,1.15rem)] max-w-[1100px]">
+            {t.aiSectionBody}
+          </p>
+
+          <div className="w-full grid grid-cols-1 sm:grid-cols-2 gap-10 sm:gap-16 mt-10 sm:mt-14">
+            {[t.aiLeft, t.aiRight].map((col) => (
+              <div key={col.graphic} className="flex flex-col items-center text-center gap-4 sm:gap-6">
+                {lang === 'ko' ? (
+                  <img
+                    src={col.captionImage}
+                    alt={col.captionTitle.replace('\n', ' ')}
+                    className="w-full h-auto object-contain"
+                    style={{ maxWidth: `${col.captionWidthPct}%` }}
+                  />
+                ) : (
+                  <h3 className="bg-gradient-to-r from-blue-600 via-indigo-500 to-purple-500 bg-clip-text text-transparent font-extrabold leading-snug whitespace-pre-line break-keep text-[clamp(0.95rem,1.8vw,1.3rem)]">
+                    {col.captionTitle}
+                  </h3>
+                )}
+                <img
+                  src={col.graphic}
+                  alt=""
+                  className="w-full h-auto object-contain"
+                />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Curriculum Expansion */}
-        <div className="w-full max-w-[1100px] flex flex-col items-center mb-14 sm:mb-20">
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-white mb-8 sm:mb-10 text-center">
-            {t.contentDirTitle}
+        <div className="w-full max-w-[1200px] flex flex-col items-center text-center mt-16 sm:mt-24">
+          <h2 className="text-black font-extrabold leading-snug break-keep text-[clamp(1.15rem,5.2vw,2.625rem)] mb-4 sm:mb-6">
+            {t.booksTitle}
           </h2>
-          <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            {t.contentDir.map((c, idx) => {
-              const Icon = contentIcons[idx];
-              return (
-                <div
-                  key={c.title}
-                  className="p-6 rounded-3xl bg-[#0b192e]/40 border border-white/20 flex flex-col gap-3"
-                >
-                  <Icon className="w-5 h-5 text-cyan-200" />
-                  <span className="text-base sm:text-lg font-bold text-white leading-snug">{c.title}</span>
-                  <span className="text-sm sm:text-base text-white/90 leading-relaxed">{c.desc}</span>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-
-        {/* Business Expansion */}
-        <div className="w-full max-w-[1100px] flex flex-col items-center">
-          <div className="flex items-center gap-2 mb-3">
-            <Rocket className="w-5 h-5 text-cyan-200" />
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white text-center">
-              {t.businessDirTitle}
-            </h2>
-          </div>
-          <p className="text-sm sm:text-base text-white/90 text-center max-w-[760px] mb-8 sm:mb-10">
-            {t.businessDirDesc}
+          <p className="text-black leading-relaxed text-balance break-keep text-[clamp(0.8rem,1.4vw,1.15rem)] max-w-[1100px] mb-10 sm:mb-14">
+            {t.booksBody}
           </p>
 
-          <div className="w-full mb-8 sm:mb-10">
-            <MediaPlaceholder icon={Map} label={t.mapMediaLabel} aspect="aspect-[21/9]" />
-          </div>
-
-          <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
-            {t.regions.map((r) => (
+          <div className="w-full flex flex-col gap-6 sm:gap-8">
+            {t.books.map((b) => (
               <div
-                key={r.region}
-                className="p-6 rounded-3xl bg-[#0b192e]/40 border border-white/20 flex flex-col gap-2"
+                key={b.level}
+                className="w-full rounded-3xl sm:rounded-full flex flex-col sm:flex-row items-center text-center sm:text-left gap-5 sm:gap-10 md:gap-12 px-8 sm:px-12 md:px-16 py-9 sm:py-8 md:py-10"
+                style={{ backgroundColor: b.pillColor }}
               >
-                <div className="flex items-center gap-2">
-                  <Globe2 className="w-4 h-4 text-cyan-200" />
-                  <span className="text-xs font-mono font-bold text-cyan-200 uppercase tracking-wider">{r.region}</span>
+                <div className="flex sm:flex-col items-center justify-center gap-2 sm:gap-0 shrink-0 sm:w-24 md:w-28">
+                  <span className="font-extrabold leading-tight text-[clamp(1.15rem,2.1vw,1.7rem)]" style={{ color: b.levelColor }}>
+                    Level
+                  </span>
+                  <span className="font-extrabold leading-tight text-[clamp(1.15rem,2.1vw,1.7rem)]" style={{ color: b.levelColor }}>
+                    {b.level}
+                  </span>
                 </div>
-                <span className="text-lg sm:text-xl font-bold text-white">{r.place}</span>
-                <p className="text-sm sm:text-base text-white/90 leading-relaxed">{r.desc}</p>
+                <img
+                  src={b.image}
+                  alt={b.title}
+                  className="w-36 sm:w-44 md:w-52 h-auto object-contain rounded-xl shrink-0"
+                />
+                <div className="flex flex-col items-center sm:items-start gap-2 sm:gap-4">
+                  <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.25rem,2.5vw,2rem)]">
+                    {b.title}
+                  </h3>
+                  <p className="text-black/80 leading-relaxed text-balance break-keep text-[clamp(0.95rem,1.7vw,1.25rem)]">
+                    {b.desc}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

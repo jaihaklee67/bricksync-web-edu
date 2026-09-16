@@ -55,7 +55,7 @@ export default function App() {
             )}
 
             {currentView === 'vision' && (
-              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
                 <VisionPage setCurrentView={setCurrentView} />
               </div>
             )}
