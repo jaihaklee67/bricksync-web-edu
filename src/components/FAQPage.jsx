@@ -196,8 +196,10 @@ export const FAQPage = ({ setCurrentView }) => {
               {categories.map((cat) => (
                 <div
                   key={cat.id}
-                  className={`w-full flex flex-col [grid-area:1/1] transition-opacity duration-200 ${
-                    cat.id === activeId ? 'visible opacity-100' : 'invisible opacity-0 pointer-events-none'
+                  className={`w-full flex flex-col [grid-area:1/1] ${
+                    cat.id === activeId
+                      ? 'visible opacity-100 transition-opacity duration-200'
+                      : 'invisible opacity-0 pointer-events-none'
                   }`}
                   aria-hidden={cat.id !== activeId}
                 >
