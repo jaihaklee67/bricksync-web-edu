@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/content';
 import { Globe, Menu, X, ChevronDown, Search } from 'lucide-react';
@@ -8,13 +8,34 @@ export const Navbar = ({ currentView, setCurrentView }) => {
   const t = content[lang].nav;
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
+  const [openDesktopSubmenu, setOpenDesktopSubmenu] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const desktopNavRef = useRef(null);
 
   const handleMenuClick = (viewKey) => {
     setCurrentView(viewKey);
     setMobileMenuOpen(false);
     setOpenMobileSubmenu(null);
+    setOpenDesktopSubmenu(null);
   };
+
+  // Desktop submenu relies on CSS hover for mouse users, but touch devices
+  // (iPad, etc.) have no hover state, so it also needs a tap-to-toggle path —
+  // close it on any tap/click outside the desktop nav.
+  useEffect(() => {
+    if (!openDesktopSubmenu) return;
+    const handleOutside = (e) => {
+      if (desktopNavRef.current && !desktopNavRef.current.contains(e.target)) {
+        setOpenDesktopSubmenu(null);
+      }
+    };
+    document.addEventListener('mousedown', handleOutside);
+    document.addEventListener('touchstart', handleOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleOutside);
+      document.removeEventListener('touchstart', handleOutside);
+    };
+  }, [openDesktopSubmenu]);
 
   const searchIndex = t.menu.flatMap((item) => [
     { title: item.title, view: item.view },
@@ -49,27 +70,40 @@ export const Navbar = ({ currentView, setCurrentView }) => {
         </button>
 
         {/* Center Desktop Navigation Menu */}
-        <nav className="hidden md:flex items-center justify-center flex-1 min-w-0 px-2 lg:px-6 gap-[clamp(10px,1.6vw,40px)]">
+        <nav ref={desktopNavRef} className="hidden md:flex items-center justify-center flex-1 min-w-0 px-2 lg:px-6 gap-[clamp(10px,1.6vw,40px)]">
           {t.menu.map((item) => {
             const isActive = item.view === currentView ||
               (item.submenu && item.submenu.some((sub) => sub.view === currentView));
+            const isOpen = openDesktopSubmenu === item.title;
 
             return (
               <div key={item.title} className={item.submenu ? 'relative group flex-shrink-0' : 'flex-shrink-0'}>
                 <button
-                  onClick={() => handleMenuClick(item.view)}
+                  onClick={() => {
+                    if (item.submenu) {
+                      setOpenDesktopSubmenu(isOpen ? null : item.title);
+                    } else {
+                      handleMenuClick(item.view);
+                    }
+                  }}
                   className={`flex items-center gap-1 text-[clamp(14px,1.45vw,20px)] font-semibold transition-colors tracking-[-0.01em] whitespace-nowrap cursor-pointer font-poppins outline-none ${
                     isActive ? 'text-[#029DF7]' : 'text-black hover:text-[#029DF7]'
                   }`}
                 >
                   {item.title}
                   {item.submenu && (
-                    <ChevronDown className="w-4 h-4 flex-shrink-0 transition-transform group-hover:rotate-180" />
+                    <ChevronDown className={`w-4 h-4 flex-shrink-0 transition-transform group-hover:rotate-180 ${isOpen ? 'rotate-180' : ''}`} />
                   )}
                 </button>
 
                 {item.submenu && (
-                  <div className="absolute left-0 top-full pt-3 z-50 opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-300 ease-out">
+                  <div
+                    className={`absolute left-0 top-full pt-3 z-50 transition-all duration-300 ease-out ${
+                      isOpen
+                        ? 'opacity-100 visible translate-y-0'
+                        : 'opacity-0 invisible -translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0'
+                    }`}
+                  >
                     <div className="flex flex-col items-start gap-5 whitespace-nowrap min-w-[220px] bg-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] px-8 py-7">
                       {item.submenu.map((sub) => (
                         <button
