@@ -4,12 +4,12 @@ import { Footer } from './Footer';
 
 const COPY = {
   ko: {
-    title: "BrickSync 앱",
+    title: "브릭싱크 App",
     subtitle: "레고 스파이크 + 레고 포트나이트",
     body1: "브릭싱크는 레고 스파이크 하드웨어와 웹 기반 AI 제스처, 음성, 비전 인식기술을 결합하여 UEFN 기반의 포트나이트 맵 '더 브릭 아일랜드'와 실시간 상호작용을 가능하게 하는 혁신적인 Physics + Digital 컴퓨팅 및 AI 코딩 교육 플랫폼입니다.",
     body2: "학생들이 직관적인 아이콘 블록 코딩으로 만든 AI 알고리즘을 실행하면, 게임 내 레고 포트나이트 맵이 실시간 반응하고 즉각적인 코인 보상을 제공하여 컴퓨팅 사고력을 향상시키는 몰입형 학습 경험을 선사합니다.",
     websiteLabel: "www.bricksync.org",
-    coreTitle: "브릭싱크 앱의 3가지 핵심 구성요소",
+    coreTitle: "브릭싱크 App의 3가지 핵심 구성요소",
     coreSubtitle: "AI와 실시간 컴퓨팅을 통해 피지컬 놀이와 디지털 세상을 연결합니다",
     cores: [
       {
@@ -38,7 +38,7 @@ const COPY = {
       },
     ],
     startGuideTitle: "브릭싱크 App 퀵스타트 가이드",
-    startGuideSubtitle: "브릭싱크 앱을 빠르고 쉽게 시작하세요!",
+    startGuideSubtitle: "브릭싱크 App을 빠르고 쉽게 시작하세요!",
     brickIslandTitle: "'더 브릭 아일랜드' 가상 공간 연결",
     brickIslandSubtitle: "브릭싱크를 포트나이트 맵에 연동하여 학습해보세요!",
   },
@@ -108,7 +108,7 @@ export const AboutPage = ({ setCurrentView }) => {
         {lang === 'ko' ? (
           <img
             src="/images/about_overview_ko.png"
-            alt="BrickSync 앱 - 레고 스파이크 + 레고 포트나이트"
+            alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
             className="w-full max-w-[1600px] h-auto object-contain flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 rounded-2xl"
           />
         ) : (
@@ -189,7 +189,7 @@ export const AboutPage = ({ setCurrentView }) => {
             {/* Quick Start Guide banner + video */}
             <img
               src="/images/about_startguide_banner.png"
-              alt="브릭싱크 App 퀵스타트 가이드 - 브릭싱크 앱을 빠르고 쉽게 시작하세요!"
+              alt="브릭싱크 App 퀵스타트 가이드 - 브릭싱크 App을 빠르고 쉽게 시작하세요!"
               className="w-full max-w-[1600px] h-auto object-cover"
             />
             <div className="w-full max-w-[1440px] flex flex-col items-center pt-10 sm:pt-14 pb-20 sm:pb-24 px-4 sm:px-8">

@@ -14,7 +14,7 @@ export const content = {
           title: "기술",
           view: "about",
           submenu: [
-            { title: "브릭싱크 웹앱", view: "about" },
+            { title: "브릭싱크 App", view: "about" },
             { title: "퀵스타트 가이드", view: "quickstart" },
             { title: "다운로드", view: "download" }
           ]
@@ -32,7 +32,6 @@ export const content = {
           title: "문의",
           view: "contact",
           submenu: [
-            { title: "알림 & 뉴스", view: "news" },
             { title: "FAQ", view: "faq" },
             { title: "1:1 상담 문의", view: "contact" }
           ]
@@ -402,7 +401,6 @@ export const content = {
           title: "Contact",
           view: "contact",
           submenu: [
-            { title: "Notifications & News", view: "news" },
             { title: "FAQ", view: "faq" },
             { title: "1:1 Consultation", view: "contact" }
           ]
