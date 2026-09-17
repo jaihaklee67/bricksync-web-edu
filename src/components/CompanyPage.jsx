@@ -4,7 +4,7 @@ import { Footer } from './Footer';
 
 const COPY = {
   ko: {
-    headline: "Physical AI 우리 아이의 경쟁력입니다.",
+    pdfDownload: "브릭싱크 소개서 다운로드",
     body1: "BrickSync는 AX 대전환 시대(AX Era)를 살아갈 아이들에게\n현실과 가상을 유기적으로 연결(Sync)하는 차세대 AI 융합 교육을 제시합니다.",
     body2: "오늘날의 AI 및 코딩 교육은 지나치게 모니터 화면 안에 갇혀 있습니다.\n단순히 텍스트 코드를 입력하고 모니터 속 움직임을 관찰하는 수동적\n교육방식은 다가올 미래를 주도할 'AI 크리에이티브 인재'로 성장시키기 어렵습니다.",
     body3: "BrickSync의 Physical AI 교육은 기존의 단순 소프트웨어적 학습방식을 벗어나,\n물리적 하드웨어·센서를 통해 인공지능이 현실 세계를 직접 인식하고, 학습과 훈련을\n통해 스스로 판단하여 행동하는 입체적 알고리즘 설계를 가르칩니다.",
@@ -38,7 +38,7 @@ const COPY = {
     ],
   },
   en: {
-    headline: "Physical AI Is Your Child's Competitive Edge.",
+    pdfDownload: "Download BrickSync Intro PDF",
     body1: "For children who will live through the AX (AI Transformation) era,\nBrickSync offers next-generation AI-convergence education that organically connects the real and the virtual (Sync).",
     body2: "Today's AI and coding education is too often confined to the screen.\nA passive style of learning — typing text code and watching it move on a\nmonitor — struggles to grow the 'AI Creative Talent' who will lead the future.",
     body3: "BrickSync's Physical AI education moves beyond simple software-based learning.\nThrough physical hardware and sensors, it teaches AI to perceive the real world\ndirectly, and to design algorithms that learn, train, and act on their own judgment.",
@@ -92,6 +92,14 @@ export const CompanyPage = ({ setCurrentView }) => {
         >
           <source src="/images/brand_story_hero.mp4" type="video/mp4" />
         </video>
+
+        <a
+          href="/files/bricksync_intro.pdf"
+          download
+          className="absolute left-[16.5%] top-[70%] px-[clamp(0.6rem,1.2vw,1.6rem)] py-[clamp(0.3rem,0.6vw,0.75rem)] rounded-full bg-[#029DF7] text-white hover:bg-black font-bold text-[clamp(0.5rem,0.9vw,1.15rem)] transition-colors font-poppins whitespace-nowrap cursor-pointer outline-none"
+        >
+          {t.pdfDownload}
+        </a>
       </div>
 
       {/* Philosophy + venn diagram */}

@@ -7,6 +7,8 @@ import { CompanyPage } from './components/CompanyPage';
 import { ValuePage } from './components/ValuePage';
 import { VisionPage } from './components/VisionPage';
 import { EducationPage } from './components/EducationPage';
+import { UefnVersePage } from './components/UefnVersePage';
+import { UnrealEnginePage } from './components/UnrealEnginePage';
 import { ComingSoonPage } from './components/ComingSoonPage';
 import { QuickStartPage } from './components/QuickStartPage';
 import { NewsPage } from './components/NewsPage';
@@ -16,6 +18,12 @@ import { ContactPage } from './components/ContactPage';
 
 export default function App() {
   const [currentView, setCurrentView] = useState('home');
+  const [eduScrollTarget, setEduScrollTarget] = useState(null);
+
+  const goToEducationStage = (stageKey) => {
+    setEduScrollTarget(stageKey);
+    setCurrentView('education');
+  };
 
   return (
     <LanguageProvider>
@@ -40,7 +48,7 @@ export default function App() {
           <main className="w-full flex-1 overflow-hidden relative">
             {currentView === 'home' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar">
-                <Hero setCurrentView={setCurrentView} />
+                <Hero setCurrentView={setCurrentView} goToEducationStage={goToEducationStage} />
               </div>
             )}
 
@@ -70,19 +78,23 @@ export default function App() {
 
             {currentView === 'education' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <EducationPage setCurrentView={setCurrentView} />
+                <EducationPage
+                  setCurrentView={setCurrentView}
+                  scrollTarget={eduScrollTarget}
+                  onScrollTargetHandled={() => setEduScrollTarget(null)}
+                />
               </div>
             )}
 
             {currentView === 'uefn-verse' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <ComingSoonPage pageKey="uefn-verse" setCurrentView={setCurrentView} />
+                <UefnVersePage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'unreal-engine' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <ComingSoonPage pageKey="unreal-engine" setCurrentView={setCurrentView} />
+                <UnrealEnginePage setCurrentView={setCurrentView} />
               </div>
             )}
 

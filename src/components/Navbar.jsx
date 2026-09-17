@@ -116,13 +116,12 @@ export const Navbar = ({ currentView, setCurrentView }) => {
             </button>
           </form>
 
-          <a
-            href="/files/bricksync_intro.pdf"
-            download
+          <button
+            onClick={() => handleMenuClick('download')}
             className="px-5 py-2.5 rounded-full bg-[#029DF7] text-white hover:bg-black font-bold text-sm lg:text-base transition-colors font-poppins whitespace-nowrap cursor-pointer outline-none"
           >
-            BrickSync 소개 PDF 다운로드
-          </a>
+            다운로드
+          </button>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -203,13 +202,12 @@ export const Navbar = ({ currentView, setCurrentView }) => {
             );
           })}
 
-          <a
-            href="/files/bricksync_intro.pdf"
-            download
-            className="mt-3 px-5 py-2.5 rounded-full bg-[#029DF7] text-white hover:bg-black font-bold text-base transition-colors font-poppins outline-none text-center"
+          <button
+            onClick={() => handleMenuClick('download')}
+            className="mt-3 px-5 py-2.5 rounded-full bg-[#029DF7] text-white hover:bg-black font-bold text-base transition-colors font-poppins outline-none"
           >
-            BrickSync 소개 PDF 다운로드
-          </a>
+            다운로드
+          </button>
         </div>
       )}
     </header>

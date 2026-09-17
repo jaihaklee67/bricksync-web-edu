@@ -78,7 +78,7 @@ const STAGES = {
         "재미있는 스토리텔링 기반의 피지컬 블록 조립",
         "내가 만든 실물 블록과 3D 에셋이 상호작용하는 신기한 경험"
       ],
-      bg: "#F1FE61", text: "black", media: "5–7세 아이가 SPIKE Essential로 조립하는 사진", image: "/images/stage_spark_5_7.jpg"
+      bg: "#F1FE61", text: "black", media: "5–7세 아이가 SPIKE Essential로 조립하는 사진", image: "/images/stage_spark_5_7.jpg", stageKey: "spark"
     },
     {
       age: "8–11세",
@@ -89,7 +89,7 @@ const STAGES = {
         "데이터 기반의 논리적 사고력과 프롬프트 활용법 습득",
         "UEFN(3D물리엔진)과 텍스트 블럭 코딩으로 나만의 3D 월드 제작"
       ],
-      bg: "#029DF7", text: "white", media: "8–11세 아이가 UEFN 크리에이티브 툴을 쓰는 사진", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%"
+      bg: "#029DF7", text: "white", media: "8–11세 아이가 UEFN 크리에이티브 툴을 쓰는 사진", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%", stageKey: "creator"
     },
     {
       age: "12–14세",
@@ -100,7 +100,7 @@ const STAGES = {
         "로봇이 스스로 생각하고 판단하는 AI 행동 알고리즘(상-행동-보상) 원리 체득",
         "Verse 전문 코딩으로 나만의 게임 규칙을 만들고 로봇 제어 시스템 완성"
       ],
-      bg: "#DE61FE", text: "white", media: "12–14세 학생이 Verse 코드를 작성하는 사진", image: "/images/stage_innovator_12_14.jpg"
+      bg: "#DE61FE", text: "white", media: "12–14세 학생이 Verse 코드를 작성하는 사진", image: "/images/stage_innovator_12_14.jpg", stageKey: "innovator"
     },
     {
       age: "16세+",
@@ -111,7 +111,7 @@ const STAGES = {
         "학습된 AI 모델을 실제 로봇에 시스템으로 적용하기",
         "3D 게임 크리에이터를 넘어 실제 AI 로봇을 다루는 핵심 인재로 성장"
       ],
-      bg: "#000000", text: "white", media: "16세 이상 학생이 로봇에 모델을 이식하는 사진", image: "/images/stage_master_16plus.jpg"
+      bg: "#000000", text: "white", media: "16세 이상 학생이 로봇에 모델을 이식하는 사진", image: "/images/stage_master_16plus.jpg", stageKey: "master"
     }
   ],
   en: [
@@ -124,7 +124,7 @@ const STAGES = {
         "Physical block assembly built around fun storytelling",
         "The wonder of watching a real brick you built interact with a 3D asset"
       ],
-      bg: "#F1FE61", text: "black", media: "Photo of a 5–7 year old building with SPIKE Essential", image: "/images/stage_spark_5_7.jpg"
+      bg: "#F1FE61", text: "black", media: "Photo of a 5–7 year old building with SPIKE Essential", image: "/images/stage_spark_5_7.jpg", stageKey: "spark"
     },
     {
       age: "Age 8–11",
@@ -135,7 +135,7 @@ const STAGES = {
         "Data-driven logical thinking and prompt-writing skills",
         "Build your own 3D world in UEFN with text-based block coding"
       ],
-      bg: "#029DF7", text: "white", media: "Photo of an 8–11 year old using UEFN creative tools", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%"
+      bg: "#029DF7", text: "white", media: "Photo of an 8–11 year old using UEFN creative tools", image: "/images/stage_creator_8_11.jpg", imagePosition: "50% 15%", stageKey: "creator"
     },
     {
       age: "Age 12–14",
@@ -146,7 +146,7 @@ const STAGES = {
         "Understanding the state-action-reward loop behind an AI robot's decision-making",
         "Write real Verse code to build your own game rules and complete a robot control system"
       ],
-      bg: "#DE61FE", text: "white", media: "Photo of a 12–14 year old writing Verse code", image: "/images/stage_innovator_12_14.jpg"
+      bg: "#DE61FE", text: "white", media: "Photo of a 12–14 year old writing Verse code", image: "/images/stage_innovator_12_14.jpg", stageKey: "innovator"
     },
     {
       age: "Age 16+",
@@ -157,12 +157,12 @@ const STAGES = {
         "Deploying a trained AI model as a working system on a real robot",
         "Growing beyond a 3D game creator into a core talent who builds real AI robots"
       ],
-      bg: "#000000", text: "white", media: "Photo of a 16+ student deploying a model to a robot", image: "/images/stage_master_16plus.jpg"
+      bg: "#000000", text: "white", media: "Photo of a 16+ student deploying a model to a robot", image: "/images/stage_master_16plus.jpg", stageKey: "master"
     }
   ]
 };
 
-export const Hero = ({ setCurrentView }) => {
+export const Hero = ({ setCurrentView, goToEducationStage }) => {
   const { lang } = useLanguage();
   const t = COPY[lang];
   const stages = STAGES[lang];
@@ -277,7 +277,7 @@ export const Hero = ({ setCurrentView }) => {
             {stages.map((s) => (
               <button
                 key={s.age}
-                onClick={() => setCurrentView && setCurrentView('vision')}
+                onClick={() => (goToEducationStage ? goToEducationStage(s.stageKey) : (setCurrentView && setCurrentView('vision')))}
                 className="relative w-full rounded-3xl overflow-hidden text-left cursor-pointer outline-none group flex flex-col"
                 style={{ backgroundColor: s.bg }}
               >
@@ -367,7 +367,7 @@ export const Hero = ({ setCurrentView }) => {
           <div className="w-full grid grid-cols-1 lg:grid-cols-[1.5fr_1fr_1fr] gap-x-1.5 gap-y-8 sm:gap-y-10">
             {/* Banner card: text/CTA at top, photo fills the rest — narrower column so the portrait photo has no side letterboxing; day cards grow to fill the freed-up width */}
             <button
-              onClick={() => setCurrentView && setCurrentView('education')}
+              onClick={() => (goToEducationStage ? goToEducationStage('camp') : (setCurrentView && setCurrentView('education')))}
               className="relative w-full aspect-square lg:aspect-auto lg:row-span-2 overflow-hidden text-left cursor-pointer outline-none flex flex-col"
               style={{ backgroundColor: '#029DF7' }}
             >
