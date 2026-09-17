@@ -51,8 +51,7 @@ export const Footer = ({ setCurrentView }) => {
             
             <p className="text-white/80 text-xs sm:text-sm leading-relaxed max-w-[460px] mb-6">
               대표자 : 이재학<br />
-              사업자 등록 번호 : 350-49-01280<br />
-              통신판매업 신고번호 : 제2026-서울서초-0000호
+              사업자 등록 번호 : 350-49-01280
             </p>
 
             <div className="mt-auto flex flex-col gap-2">
