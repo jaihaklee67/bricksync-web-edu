@@ -3,7 +3,7 @@ export const content = {
     nav: {
       menu: [
         {
-          title: "About",
+          title: "브릭싱크 소개",
           view: "company",
           submenu: [
             { title: "교육 이념", view: "company" },
@@ -11,7 +11,7 @@ export const content = {
           ]
         },
         {
-          title: "Technology",
+          title: "기술",
           view: "about",
           submenu: [
             { title: "브릭싱크 웹앱", view: "about" },
@@ -20,7 +20,7 @@ export const content = {
           ]
         },
         {
-          title: "Education",
+          title: "교육",
           view: "education",
           submenu: [
             { title: "레고 포트나이트", view: "education" },
@@ -29,7 +29,7 @@ export const content = {
           ]
         },
         {
-          title: "Contact",
+          title: "문의",
           view: "contact",
           submenu: [
             { title: "알림 & 뉴스", view: "news" },
