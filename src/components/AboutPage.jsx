@@ -92,14 +92,17 @@ export const AboutPage = ({ setCurrentView }) => {
 
       <div className="w-full flex flex-col items-center flex-1">
         {/* Full-width autoplay/loop banner video */}
-        <video
-          src="/images/about_hero_video.mp4"
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-auto object-cover aspect-[32/9] select-none pointer-events-none -mt-20 sm:-mt-24 md:-mt-28"
-        />
+        <div className="relative w-full -mt-20 sm:-mt-24 md:-mt-28">
+          <video
+            src="/images/about_hero_video.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto object-cover aspect-[32/9] select-none pointer-events-none"
+          />
+          <div className="absolute inset-0 bg-black/25 pointer-events-none" />
+        </div>
 
         {/* Section 1: Overview (navy text panel + dashboard/photo showcase) */}
         {lang === 'ko' ? (

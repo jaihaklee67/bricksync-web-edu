@@ -9,6 +9,8 @@ import { VisionPage } from './components/VisionPage';
 import { EducationPage } from './components/EducationPage';
 import { ComingSoonPage } from './components/ComingSoonPage';
 import { QuickStartPage } from './components/QuickStartPage';
+import { NewsPage } from './components/NewsPage';
+import { FAQPage } from './components/FAQPage';
 import { DownloadPage } from './components/DownloadPage';
 import { ContactPage } from './components/ContactPage';
 
@@ -104,13 +106,13 @@ export default function App() {
 
             {currentView === 'news' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <ComingSoonPage pageKey="news" setCurrentView={setCurrentView} />
+                <NewsPage setCurrentView={setCurrentView} />
               </div>
             )}
 
             {currentView === 'faq' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <ComingSoonPage pageKey="faq" setCurrentView={setCurrentView} />
+                <FAQPage setCurrentView={setCurrentView} />
               </div>
             )}
 
