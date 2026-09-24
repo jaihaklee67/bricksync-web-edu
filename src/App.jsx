@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { LanguageProvider } from './context/LanguageContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
@@ -16,8 +17,37 @@ import { FAQPage } from './components/FAQPage';
 import { DownloadPage } from './components/DownloadPage';
 import { ContactPage } from './components/ContactPage';
 
+// Every page gets its own real URL (so it can be linked, bookmarked, and
+// refreshed directly) instead of the whole site living at one address with
+// content swapped by JS state. `currentView` is derived from the URL path,
+// and setCurrentView navigates to the matching path — every existing child
+// component that already calls setCurrentView('xxx') keeps working as-is.
+const VIEW_TO_PATH = {
+  home: '/',
+  company: '/company',
+  value: '/value',
+  vision: '/vision',
+  about: '/about',
+  education: '/education',
+  'uefn-verse': '/uefn-verse',
+  'unreal-engine': '/unreal-engine',
+  quickstart: '/quickstart',
+  download: '/download',
+  contact: '/contact',
+  news: '/news',
+  faq: '/faq',
+  privacy: '/privacy',
+  terms: '/terms',
+};
+const PATH_TO_VIEW = Object.fromEntries(
+  Object.entries(VIEW_TO_PATH).map(([view, path]) => [path, view])
+);
+
 export default function App() {
-  const [currentView, setCurrentView] = useState('home');
+  const location = useLocation();
+  const navigate = useNavigate();
+  const currentView = PATH_TO_VIEW[location.pathname] || 'home';
+  const setCurrentView = (viewKey) => navigate(VIEW_TO_PATH[viewKey] || '/');
   const [eduScrollTarget, setEduScrollTarget] = useState(null);
 
   const goToEducationStage = (stageKey) => {
