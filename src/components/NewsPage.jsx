@@ -92,12 +92,12 @@ export const NewsPage = ({ setCurrentView }) => {
   const t = COPY[lang];
 
   return (
-    <div className="w-full min-h-full flex flex-col items-center justify-between select-none font-poppins">
+    <div className="relative z-10 w-full min-h-full flex flex-col items-center justify-between select-none font-poppins bg-[#fbfffa] -mt-20 sm:-mt-24 md:-mt-28 pt-20 sm:pt-24 md:pt-28">
       <div className="w-full flex flex-col items-center flex-1 py-10 sm:py-14 md:py-16 px-4 sm:px-8 md:px-12">
-        <h1 className="text-white font-extrabold leading-tight break-keep text-center text-[clamp(1.4rem,4.2vw,3rem)] mb-2 sm:mb-3">
+        <h1 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.4rem,4.2vw,3rem)] mb-2 sm:mb-3">
           {t.title}
         </h1>
-        <p className="text-white/80 text-balance break-keep text-center max-w-2xl text-[clamp(0.8rem,1.6vw,1.15rem)] mb-12 sm:mb-16">
+        <p className="text-black/70 text-balance break-keep text-center max-w-2xl text-[clamp(0.8rem,1.6vw,1.15rem)] mb-12 sm:mb-16">
           {t.subtitle}
         </p>
 
@@ -105,11 +105,11 @@ export const NewsPage = ({ setCurrentView }) => {
         <section className="w-full max-w-[1200px] flex flex-col items-center mb-16 sm:mb-24">
           <div className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 sm:mb-6">
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5">
-              <h2 className="text-white font-bold flex items-center gap-2 text-[clamp(1.05rem,2vw,1.6rem)]">
+              <h2 className="text-black font-bold flex items-center gap-2 text-[clamp(1.05rem,2vw,1.6rem)]">
                 <YouTubeIcon className="w-[1em] h-[1em] text-red-500 shrink-0" />
                 {t.ytTitle}
               </h2>
-              <p className="text-white/70 text-balance break-keep text-[clamp(0.75rem,1.2vw,0.95rem)]">
+              <p className="text-black/70 text-balance break-keep text-[clamp(0.75rem,1.2vw,0.95rem)]">
                 {t.ytDesc}
               </p>
             </div>
@@ -140,11 +140,11 @@ export const NewsPage = ({ setCurrentView }) => {
         <section className="w-full max-w-[1200px] flex flex-col items-center pb-8 sm:pb-12">
           <div className="w-full flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-5 sm:mb-6">
             <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-1.5">
-              <h2 className="text-white font-bold flex items-center gap-2 text-[clamp(1.05rem,2vw,1.6rem)]">
+              <h2 className="text-black font-bold flex items-center gap-2 text-[clamp(1.05rem,2vw,1.6rem)]">
                 <InstagramIcon className="w-[1em] h-[1em] text-pink-400 shrink-0" />
                 {t.igTitle}
               </h2>
-              <p className="text-white/70 text-balance break-keep text-[clamp(0.75rem,1.2vw,0.95rem)]">
+              <p className="text-black/70 text-balance break-keep text-[clamp(0.75rem,1.2vw,0.95rem)]">
                 {t.igDesc}
               </p>
             </div>
