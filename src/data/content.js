@@ -29,7 +29,7 @@ export const content = {
           ]
         },
         {
-          title: "문의 & 뉴스",
+          title: "커뮤니케이션",
           view: "contact",
           submenu: [
             { title: "FAQ", view: "faq" },
@@ -399,7 +399,7 @@ export const content = {
           ]
         },
         {
-          title: "Contact & News",
+          title: "Communication",
           view: "contact",
           submenu: [
             { title: "FAQ", view: "faq" },
