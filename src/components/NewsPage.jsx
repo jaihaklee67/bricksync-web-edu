@@ -9,34 +9,12 @@ const COPY = {
   ko: {
     tagline: '오늘도 여러분과 함께 새로운 세상을 만들어갑니다',
     title: 'BrickSync 소셜 네트워크 서비스',
-    ytLabel: 'Youtube 채널',
-    ytHandle: '@BrickSync_PhysicalAI',
-    igLabel: 'Instagram 채널',
-    igHandle: '@brick_sync',
   },
   en: {
     tagline: 'Building a new world together, every day',
     title: 'BrickSync Social Network Service',
-    ytLabel: 'Youtube Channel',
-    ytHandle: '@BrickSync_PhysicalAI',
-    igLabel: 'Instagram Channel',
-    igHandle: '@brick_sync',
   },
 };
-
-const YouTubeIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="currentColor" {...props}>
-    <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.5V8.5l6.3 3.5-6.3 3.5Z" />
-  </svg>
-);
-
-const InstagramIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" {...props}>
-    <rect x="3" y="3" width="18" height="18" rx="5" />
-    <circle cx="12" cy="12" r="4" />
-    <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
-  </svg>
-);
 
 export const NewsPage = ({ setCurrentView }) => {
   const { lang } = useLanguage();
@@ -67,13 +45,11 @@ export const NewsPage = ({ setCurrentView }) => {
             rel="noopener noreferrer"
             className="flex flex-col items-center"
           >
-            <YouTubeIcon className="w-[clamp(2.2rem,3vw,3.2rem)] h-[clamp(2.2rem,3vw,3.2rem)] text-[#FF0033] mb-2 sm:mb-3" />
-            <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.2rem,2.4vw,2rem)]">
-              {t.ytLabel}
-            </h3>
-            <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.2rem,2.4vw,2rem)] mb-6 sm:mb-8">
-              {t.ytHandle}
-            </p>
+            <img
+              src="/images/sns_youtube_title.png"
+              alt="Youtube 채널 @BrickSync_PhysicalAI"
+              className="w-[48.89%] h-auto select-none pointer-events-none mb-6 sm:mb-8"
+            />
             <img
               src="/images/sns_youtube_card.png"
               alt="BrickSync YouTube"
@@ -88,13 +64,11 @@ export const NewsPage = ({ setCurrentView }) => {
             rel="noopener noreferrer"
             className="flex flex-col items-center"
           >
-            <InstagramIcon className="w-[clamp(2rem,2.7vw,2.8rem)] h-[clamp(2rem,2.7vw,2.8rem)] text-[#D62976] mb-2 sm:mb-3" />
-            <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.2rem,2.4vw,2rem)]">
-              {t.igLabel}
-            </h3>
-            <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.2rem,2.4vw,2rem)] mb-6 sm:mb-8">
-              {t.igHandle}
-            </p>
+            <img
+              src="/images/sns_instagram_title.png"
+              alt="Instagram 채널 @brick_sync"
+              className="w-[37.78%] h-auto select-none pointer-events-none mb-6 sm:mb-8"
+            />
             <img
               src="/images/sns_instagram_card.png"
               alt="BrickSync Instagram"
