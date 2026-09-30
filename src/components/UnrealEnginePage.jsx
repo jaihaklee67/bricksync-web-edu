@@ -13,7 +13,7 @@ const COPY = {
         heading: '실시간 인터랙티브 시뮬레이션',
         body: '사용자 입력과 센서 반응에 실시간 동작하는 3D 시뮬레이션 구축.',
         ctaLabel: '샘플 강의 보러가기 →',
-        ctaHref: 'https://youtube.com/playlist?list=PLXa2Rp5p9zps&si=WzXTAVxwmJTE6S5j',
+        ctaHref: 'https://youtu.be/5vPIuSoeOn8?si=icTQbii3RHIfIcZB',
       },
       {
         image: '/images/unreal_configurator.png',
@@ -41,7 +41,7 @@ const COPY = {
         heading: 'Real-Time Interactive Simulation',
         body: 'Build 3D simulations that react in real time to user input and sensor data.',
         ctaLabel: 'Watch Sample Lecture →',
-        ctaHref: 'https://youtube.com/playlist?list=PLXa2Rp5p9zps&si=WzXTAVxwmJTE6S5j',
+        ctaHref: 'https://youtu.be/5vPIuSoeOn8?si=icTQbii3RHIfIcZB',
       },
       {
         image: '/images/unreal_configurator.png',
