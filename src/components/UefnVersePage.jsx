@@ -13,7 +13,7 @@ const COPY = {
         heading: 'UEFN 3D 콘텐츠 개발',
         body: '포트나이트 에디터와 Verse를 활용한 3D 메타버스 콘텐츠 제작',
         ctaLabel: '샘플 강의 보러가기 →',
-        ctaHref: 'https://youtube.com/playlist?list=PLas0FpwpIEes&si=1qTgvou2cuLupAUI',
+        ctaHref: 'https://www.youtube.com/watch?v=9fG_bBTM0QE&list=PLas0FpwpIEes&index=10',
       },
       {
         image: '/images/uefn_verse_mcp.png',
@@ -37,7 +37,7 @@ const COPY = {
         heading: 'AI × UEFN 3D Content',
         body: '3D content creation training that combines AI technology with Epic Games\' UEFN.',
         ctaLabel: 'Watch Sample Lecture →',
-        ctaHref: 'https://youtube.com/playlist?list=PLas0FpwpIEes&si=1qTgvou2cuLupAUI',
+        ctaHref: 'https://www.youtube.com/watch?v=9fG_bBTM0QE&list=PLas0FpwpIEes&index=10',
       },
       {
         image: '/images/uefn_verse_mcp.png',
