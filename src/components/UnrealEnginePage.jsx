@@ -12,16 +12,22 @@ const COPY = {
         image: '/images/unreal_simulation.png',
         heading: '실시간 인터랙티브 시뮬레이션',
         body: '사용자 입력과 센서 반응에 실시간 동작하는 3D 시뮬레이션 구축.',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: 'https://youtube.com/playlist?list=PLXa2Rp5p9zps&si=WzXTAVxwmJTE6S5j',
       },
       {
         image: '/images/unreal_configurator.png',
         heading: '고품질 컨피규레이터 제작',
         body: '건축, 산업 디자인, 제품 기획을 위한 고품질 컨피규레이터 제작.',
+        ctaLabel: '강의 진행 영상 보러가기 →',
+        ctaHref: 'https://youtube.com/playlist?list=PLZdFiMm3Ntkc&si=OwZJz8t_MAT3KZOY',
       },
       {
         image: '/images/unreal_virtualhuman.jpg',
         heading: '버추얼 휴먼 & 리얼타임 XR',
         body: '버추얼 휴먼 활용 리얼타임 XR 게임 및 영상 방송 콘텐츠 제작.',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: 'https://youtu.be/w_wC-rwGEck?si=a-rrA4YjCZ4uTPsl',
       },
     ],
   },
@@ -34,16 +40,22 @@ const COPY = {
         image: '/images/unreal_simulation.png',
         heading: 'Real-Time Interactive Simulation',
         body: 'Build 3D simulations that react in real time to user input and sensor data.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: 'https://youtube.com/playlist?list=PLXa2Rp5p9zps&si=WzXTAVxwmJTE6S5j',
       },
       {
         image: '/images/unreal_configurator.png',
         heading: 'High-Quality Configurators',
         body: 'Create high-quality configurators for architecture, industrial design, and product planning.',
+        ctaLabel: 'Watch Course Walkthrough →',
+        ctaHref: 'https://youtube.com/playlist?list=PLZdFiMm3Ntkc&si=OwZJz8t_MAT3KZOY',
       },
       {
         image: '/images/unreal_virtualhuman.jpg',
         heading: 'Virtual Humans & Real-Time XR',
         body: 'Produce real-time XR games and broadcast content powered by virtual humans.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: 'https://youtu.be/w_wC-rwGEck?si=a-rrA4YjCZ4uTPsl',
       },
     ],
   },
@@ -92,13 +104,23 @@ export const UnrealEnginePage = ({ setCurrentView }) => {
                   className="w-full h-full object-cover select-none pointer-events-none"
                 />
               </div>
-              <div className="flex flex-col gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
+              <div className="flex flex-col flex-1 gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
                 <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.4rem,3.4vw,2.5rem)]">
                   {c.heading}
                 </h3>
                 <p className="text-black/70 leading-relaxed break-keep text-[clamp(1.1rem,2.4vw,1.9rem)]">
                   {c.body}
                 </p>
+                {c.ctaHref && (
+                  <a
+                    href={c.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-end mt-auto inline-flex items-center gap-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#029DF7] text-white font-bold whitespace-nowrap hover:bg-black transition-colors text-[clamp(0.85rem,1.6vw,1.1rem)]"
+                  >
+                    {c.ctaLabel}
+                  </a>
+                )}
               </div>
             </div>
           ))}
