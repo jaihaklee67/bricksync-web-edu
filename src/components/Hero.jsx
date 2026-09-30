@@ -372,7 +372,7 @@ export const Hero = ({ setCurrentView, goToEducationStage }) => {
               style={{ backgroundColor: '#029DF7' }}
             >
               <div className="relative z-10 p-[clamp(1rem,3vw,1.5rem)] pb-[clamp(0.75rem,2vw,1rem)] flex-shrink-0">
-                <span className="text-[clamp(1.05rem,2.3vw,1.5rem)] font-extrabold text-white leading-snug block mb-[clamp(0.75rem,2vw,1rem)] whitespace-pre-line drop-shadow-[0_1px_6px_rgba(0,0,0,0.25)]">
+                <span className="text-[clamp(1.05rem,2.3vw,1.5rem)] lg:text-[clamp(1rem,1.4vw,1.15rem)] font-extrabold text-white leading-snug block mb-[clamp(0.75rem,2vw,1rem)] break-keep whitespace-pre-line lg:whitespace-pre drop-shadow-[0_1px_6px_rgba(0,0,0,0.25)]">
                   {t.campBannerTitle}
                 </span>
                 <span className="block w-fit ml-auto px-[clamp(1rem,2.5vw,1.25rem)] py-[clamp(0.5rem,1.5vw,0.625rem)] rounded-full bg-white text-[#029DF7] font-bold text-[clamp(0.75rem,1.6vw,0.875rem)]">
