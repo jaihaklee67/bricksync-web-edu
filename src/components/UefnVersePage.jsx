@@ -10,8 +10,10 @@ const COPY = {
     cards: [
       {
         image: '/images/uefn_verse_hero.webp',
-        heading: 'AI × UEFN 3D 콘텐츠 개발',
-        body: 'AI 기술과 에픽게임즈 UEFN을 결합한 3D 콘텐츠 제작 교육.',
+        heading: 'UEFN 3D 콘텐츠 개발',
+        body: '포트나이트 에디터와 Verse를 활용한 3D 메타버스 콘텐츠 제작',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: 'https://youtube.com/playlist?list=PLas0FpwpIEes&si=1qTgvou2cuLupAUI',
       },
       {
         image: '/images/uefn_verse_mcp.png',
@@ -34,6 +36,8 @@ const COPY = {
         image: '/images/uefn_verse_hero.webp',
         heading: 'AI × UEFN 3D Content',
         body: '3D content creation training that combines AI technology with Epic Games\' UEFN.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: 'https://youtube.com/playlist?list=PLas0FpwpIEes&si=1qTgvou2cuLupAUI',
       },
       {
         image: '/images/uefn_verse_mcp.png',
@@ -92,13 +96,23 @@ export const UefnVersePage = ({ setCurrentView }) => {
                   className="w-full h-full object-cover select-none pointer-events-none"
                 />
               </div>
-              <div className="flex flex-col gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
+              <div className="flex flex-col flex-1 gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
                 <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.4rem,3.4vw,2.5rem)]">
                   {c.heading}
                 </h3>
                 <p className="text-black/70 leading-relaxed break-keep text-[clamp(1.1rem,2.4vw,1.9rem)]">
                   {c.body}
                 </p>
+                {c.ctaHref && (
+                  <a
+                    href={c.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-end mt-auto inline-flex items-center gap-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#029DF7] text-white font-bold whitespace-nowrap hover:bg-black transition-colors text-[clamp(0.85rem,1.6vw,1.1rem)]"
+                  >
+                    {c.ctaLabel}
+                  </a>
+                )}
               </div>
             </div>
           ))}
