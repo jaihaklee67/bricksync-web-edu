@@ -9,9 +9,9 @@ const COPY = {
     subtitle2: 'Unreal Engine 시뮬레이션 제작',
     cards: [
       {
-        image: '/images/unreal_simulation.png',
-        heading: '실시간 인터랙티브 시뮬레이션',
-        body: '사용자 입력과 센서 반응에 실시간 동작하는 3D 시뮬레이션 구축.',
+        image: '/images/unreal_media_art.jpg',
+        heading: '실시간 인터랙티브 미디어 아트',
+        body: '음악에 따라 그림이 바뀌는 인터렉티브 미디어 아트 작품 제작',
         ctaLabel: '샘플 강의 보러가기 →',
         ctaHref: 'https://youtu.be/5vPIuSoeOn8?si=icTQbii3RHIfIcZB',
       },
@@ -37,7 +37,7 @@ const COPY = {
     subtitle2: 'Unreal Engine Simulation Production',
     cards: [
       {
-        image: '/images/unreal_simulation.png',
+        image: '/images/unreal_media_art.jpg',
         heading: 'Real-Time Interactive Simulation',
         body: 'Build 3D simulations that react in real time to user input and sensor data.',
         ctaLabel: 'Watch Sample Lecture →',
