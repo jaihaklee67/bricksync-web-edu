@@ -3,7 +3,7 @@ import { Footer } from './Footer';
 
 export const NewsPage = ({ setCurrentView }) => {
   return (
-    <div className="relative z-10 w-full min-h-full flex flex-col items-center justify-between select-none font-poppins bg-black -mt-20 sm:-mt-24 md:-mt-28">
+    <div className="relative z-10 w-full min-h-full flex flex-col items-center justify-between select-none font-poppins bg-[#fbfffa] -mt-20 sm:-mt-24 md:-mt-28">
       <img
         src="/images/sns_hero.png"
         alt="BrickSync SNS"
