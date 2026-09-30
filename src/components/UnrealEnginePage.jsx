@@ -20,7 +20,7 @@ const COPY = {
         heading: '고품질 컨피규레이터 제작',
         body: '건축, 산업 디자인, 제품 기획을 위한 고품질 컨피규레이터 제작.',
         ctaLabel: '강의 진행 영상 보러가기 →',
-        ctaHref: 'https://youtube.com/playlist?list=PLZdFiMm3Ntkc&si=OwZJz8t_MAT3KZOY',
+        ctaHref: 'https://www.youtube.com/watch?v=G9eCxeh4ziQ&list=PLZdFiMm3Ntkc&index=1',
       },
       {
         image: '/images/unreal_virtualhuman.jpg',
@@ -48,7 +48,7 @@ const COPY = {
         heading: 'High-Quality Configurators',
         body: 'Create high-quality configurators for architecture, industrial design, and product planning.',
         ctaLabel: 'Watch Course Walkthrough →',
-        ctaHref: 'https://youtube.com/playlist?list=PLZdFiMm3Ntkc&si=OwZJz8t_MAT3KZOY',
+        ctaHref: 'https://www.youtube.com/watch?v=G9eCxeh4ziQ&list=PLZdFiMm3Ntkc&index=1',
       },
       {
         image: '/images/unreal_virtualhuman.jpg',
