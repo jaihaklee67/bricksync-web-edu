@@ -59,49 +59,49 @@ export const NewsPage = ({ setCurrentView }) => {
           </h2>
         </div>
 
-        {/* YouTube channel */}
-        <a
-          href={YOUTUBE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full flex flex-col items-center px-4 sm:px-8 pb-16 sm:pb-24"
-        >
-          <YouTubeIcon className="w-[clamp(2.2rem,4.5vw,3.5rem)] h-[clamp(2.2rem,4.5vw,3.5rem)] text-[#FF0033] mb-2 sm:mb-3" />
-          <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.3rem,3.4vw,2.6rem)]">
-            {t.ytLabel}
-          </h3>
-          <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.3rem,3.4vw,2.6rem)] mb-6 sm:mb-8">
-            {t.ytHandle}
-          </p>
-          <img
-            src="/images/sns_youtube_card.png"
-            alt="BrickSync YouTube"
-            className="w-full h-auto select-none pointer-events-none rounded-2xl md:rounded-3xl shadow-[0_16px_50px_rgba(0,0,0,0.12)]"
-            style={{ maxWidth: 900 }}
-          />
-        </a>
+        <div className="w-full max-w-[1440px] grid grid-cols-1 md:grid-cols-2 gap-x-10 lg:gap-x-16 gap-y-16 items-start px-4 sm:px-8 pb-20 sm:pb-28">
+          {/* YouTube channel */}
+          <a
+            href={YOUTUBE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center"
+          >
+            <YouTubeIcon className="w-[clamp(2.2rem,3vw,3.2rem)] h-[clamp(2.2rem,3vw,3.2rem)] text-[#FF0033] mb-2 sm:mb-3" />
+            <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.2rem,2.4vw,2rem)]">
+              {t.ytLabel}
+            </h3>
+            <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.2rem,2.4vw,2rem)] mb-6 sm:mb-8">
+              {t.ytHandle}
+            </p>
+            <img
+              src="/images/sns_youtube_card.png"
+              alt="BrickSync YouTube"
+              className="w-full h-auto select-none pointer-events-none rounded-2xl md:rounded-3xl shadow-[0_16px_50px_rgba(0,0,0,0.12)]"
+            />
+          </a>
 
-        {/* Instagram channel */}
-        <a
-          href={INSTAGRAM_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-full flex flex-col items-center px-4 sm:px-8 pb-20 sm:pb-28"
-        >
-          <InstagramIcon className="w-[clamp(2rem,4vw,3.1rem)] h-[clamp(2rem,4vw,3.1rem)] text-[#D62976] mb-2 sm:mb-3" />
-          <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.3rem,3.4vw,2.6rem)]">
-            {t.igLabel}
-          </h3>
-          <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.3rem,3.4vw,2.6rem)] mb-6 sm:mb-8">
-            {t.igHandle}
-          </p>
-          <img
-            src="/images/sns_instagram_card.png"
-            alt="BrickSync Instagram"
-            className="w-full h-auto select-none pointer-events-none rounded-2xl md:rounded-3xl shadow-[0_16px_50px_rgba(0,0,0,0.12)]"
-            style={{ maxWidth: 544 }}
-          />
-        </a>
+          {/* Instagram channel */}
+          <a
+            href={INSTAGRAM_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex flex-col items-center"
+          >
+            <InstagramIcon className="w-[clamp(2rem,2.7vw,2.8rem)] h-[clamp(2rem,2.7vw,2.8rem)] text-[#D62976] mb-2 sm:mb-3" />
+            <h3 className="text-black font-extrabold leading-tight break-keep text-center text-[clamp(1.2rem,2.4vw,2rem)]">
+              {t.igLabel}
+            </h3>
+            <p className="text-black font-extrabold leading-tight text-center text-[clamp(1.2rem,2.4vw,2rem)] mb-6 sm:mb-8">
+              {t.igHandle}
+            </p>
+            <img
+              src="/images/sns_instagram_card.png"
+              alt="BrickSync Instagram"
+              className="w-[60.44%] h-auto select-none pointer-events-none rounded-2xl md:rounded-3xl shadow-[0_16px_50px_rgba(0,0,0,0.12)]"
+            />
+          </a>
+        </div>
       </div>
       <Footer setCurrentView={setCurrentView} />
     </div>
