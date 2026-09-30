@@ -340,7 +340,7 @@ export const Hero = ({ setCurrentView, goToEducationStage }) => {
           <div className="w-[calc(100%+3rem)] -mx-6" style={{ backgroundColor: '#FBECFF' }}>
             <div className="max-w-[1100px] mx-auto px-6 py-10 sm:py-14 flex flex-col items-center">
               <h2 className="text-[clamp(0.8rem,5vw,3.75rem)] leading-tight font-extrabold text-black mb-2 text-center whitespace-nowrap">{t.campTitle}</h2>
-              <p className="text-[clamp(0.75rem,1.75vw,2rem)] leading-snug text-black mb-6 text-center whitespace-pre-line">{t.campSubtitle}</p>
+              <p className="text-[clamp(0.75rem,1.5vw,1.45rem)] leading-snug text-black mb-6 text-center break-keep text-balance whitespace-pre-line sm:whitespace-pre">{t.campSubtitle}</p>
 
               <div className="flex flex-col items-center gap-3">
                 <div className="flex items-center gap-2.5">
