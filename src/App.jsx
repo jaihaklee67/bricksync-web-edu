@@ -34,7 +34,7 @@ const VIEW_TO_PATH = {
   quickstart: '/quickstart',
   download: '/download',
   contact: '/contact',
-  news: '/news',
+  news: '/sns',
   faq: '/faq',
   privacy: '/privacy',
   terms: '/terms',
