@@ -29,11 +29,12 @@ export const content = {
           ]
         },
         {
-          title: "문의",
+          title: "문의 & 뉴스",
           view: "contact",
           submenu: [
             { title: "FAQ", view: "faq" },
-            { title: "1:1 상담 문의", view: "contact" }
+            { title: "1:1 상담 문의", view: "contact" },
+            { title: "SNS", view: "news" }
           ]
         }
       ],
@@ -398,11 +399,12 @@ export const content = {
           ]
         },
         {
-          title: "Contact",
+          title: "Contact & News",
           view: "contact",
           submenu: [
             { title: "FAQ", view: "faq" },
-            { title: "1:1 Consultation", view: "contact" }
+            { title: "1:1 Consultation", view: "contact" },
+            { title: "SNS", view: "news" }
           ]
         }
       ],
