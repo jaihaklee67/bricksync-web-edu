@@ -10,6 +10,7 @@ export const Navbar = ({ currentView, setCurrentView }) => {
   const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
   const [openDesktopSubmenu, setOpenDesktopSubmenu] = useState(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [searchFocused, setSearchFocused] = useState(false);
   const desktopNavRef = useRef(null);
 
   const handleMenuClick = (viewKey) => {
@@ -42,14 +43,21 @@ export const Navbar = ({ currentView, setCurrentView }) => {
     ...(item.submenu ? item.submenu.map((sub) => ({ title: sub.title, view: sub.view })) : [])
   ]);
 
+  const searchResults = searchQuery.trim()
+    ? searchIndex.filter((entry) => entry.title.toLowerCase().includes(searchQuery.trim().toLowerCase())).slice(0, 6)
+    : [];
+  const noResultsLabel = lang === 'ko' ? '검색 결과가 없습니다' : 'No results found';
+
+  const handleSearchSelect = (viewKey) => {
+    handleMenuClick(viewKey);
+    setSearchQuery('');
+    setSearchFocused(false);
+  };
+
   const handleSearchSubmit = (e) => {
     e.preventDefault();
-    const q = searchQuery.trim().toLowerCase();
-    if (!q) return;
-    const match = searchIndex.find((entry) => entry.title.toLowerCase().includes(q));
-    if (match) {
-      handleMenuClick(match.view);
-      setSearchQuery('');
+    if (searchResults.length > 0) {
+      handleSearchSelect(searchResults[0].view);
     }
   };
 
@@ -139,6 +147,8 @@ export const Navbar = ({ currentView, setCurrentView }) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
               placeholder="Search BrickSync"
               className="w-36 lg:w-48 pl-4 pr-9 py-2 rounded-full border border-black/15 text-sm text-black placeholder:text-black/40 outline-none focus:border-[#029DF7] transition-colors font-poppins"
             />
@@ -148,6 +158,28 @@ export const Navbar = ({ currentView, setCurrentView }) => {
             >
               <Search className="w-4 h-4" />
             </button>
+
+            {searchFocused && searchQuery.trim() && (
+              <div className="absolute left-0 top-full mt-2 w-64 rounded-2xl bg-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] overflow-hidden z-50">
+                {searchResults.length > 0 ? (
+                  <ul className="flex flex-col py-2">
+                    {searchResults.map((r) => (
+                      <li key={r.title}>
+                        <button
+                          type="button"
+                          onMouseDown={() => handleSearchSelect(r.view)}
+                          className="w-full text-left px-4 py-2.5 text-sm text-black hover:bg-black/5 hover:text-[#029DF7] transition-colors font-poppins outline-none"
+                        >
+                          {r.title}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="px-4 py-3 text-sm text-black/50 font-poppins">{noResultsLabel}</p>
+                )}
+              </div>
+            )}
           </form>
 
           <button
@@ -177,6 +209,8 @@ export const Navbar = ({ currentView, setCurrentView }) => {
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
+              onFocus={() => setSearchFocused(true)}
+              onBlur={() => setTimeout(() => setSearchFocused(false), 150)}
               placeholder="Search BrickSync"
               className="w-full pl-4 pr-9 py-2.5 rounded-full border border-black/15 text-sm text-black placeholder:text-black/40 outline-none focus:border-[#029DF7] transition-colors font-poppins"
             />
@@ -186,6 +220,28 @@ export const Navbar = ({ currentView, setCurrentView }) => {
             >
               <Search className="w-4 h-4" />
             </button>
+
+            {searchFocused && searchQuery.trim() && (
+              <div className="absolute left-0 right-0 top-full mt-2 rounded-2xl bg-white border border-black/10 shadow-[0_8px_24px_rgba(0,0,0,0.12)] overflow-hidden z-50">
+                {searchResults.length > 0 ? (
+                  <ul className="flex flex-col py-2">
+                    {searchResults.map((r) => (
+                      <li key={r.title}>
+                        <button
+                          type="button"
+                          onMouseDown={() => handleSearchSelect(r.view)}
+                          className="w-full text-left px-4 py-2.5 text-sm text-black hover:bg-black/5 hover:text-[#029DF7] transition-colors font-poppins outline-none"
+                        >
+                          {r.title}
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="px-4 py-3 text-sm text-black/50 font-poppins">{noResultsLabel}</p>
+                )}
+              </div>
+            )}
           </form>
 
           <button
