@@ -14,7 +14,7 @@ const COPY = {
         body: '센서와 실시간 그래픽을 결합해 관객 움직임에 반응하는 설치 작품을 제작합니다.',
       },
       {
-        image: '/images/interactive_card2.jpg',
+        image: '/images/interactive_card2b.jpg',
         heading: '프로젝션 맵핑 & 미디어 파사드',
         body: '건물·오브젝트 표면에 영상을 투사하는 프로젝션 맵핑과 미디어 파사드 연출을 학습합니다.',
       },
@@ -36,7 +36,7 @@ const COPY = {
         body: 'Combine sensors and real-time graphics to build installations that react to audience movement.',
       },
       {
-        image: '/images/interactive_card2.jpg',
+        image: '/images/interactive_card2b.jpg',
         heading: 'Projection Mapping & Media Facades',
         body: 'Learn to project visuals onto buildings and objects through projection mapping and media facade design.',
       },
