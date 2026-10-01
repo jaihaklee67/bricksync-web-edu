@@ -4,9 +4,9 @@ import { Footer } from './Footer';
 
 const COPY = {
   ko: {
-    title: 'Unreal Engine',
-    subtitle: '인터렉션/모션캡쳐 활용',
-    subtitle2: 'Unreal Engine 시뮬레이션 제작',
+    title: 'AI 시뮬레이션',
+    subtitle: '모션캡처, 인터랙션, 물리 연동 기반의 고성능 3D 환경 구축',
+    subtitle2: '"아이디어를 현실감 있는 3D 가상 세계와 AI로 인터랙티브 시스템으로"',
     cards: [
       {
         image: '/images/unreal_media_art.jpg',
