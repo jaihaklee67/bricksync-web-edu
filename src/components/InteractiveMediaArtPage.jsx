@@ -10,7 +10,7 @@ const COPY = {
     cards: [
       {
         image: '/images/interactive_card1.jpg',
-        heading: '실시간 인터랙티브 설치 아트',
+        heading: 'LED 아나몰픽 콘텐츠 제작',
         body: '센서와 실시간 그래픽을 결합해 관객 움직임에 반응하는 설치 작품을 제작합니다.',
       },
       {
@@ -20,7 +20,7 @@ const COPY = {
       },
       {
         image: '/images/interactive_card3.jpg',
-        heading: '제스처 & 센서 기반 인터랙션',
+        heading: '센서 기반 실시간 인터랙션',
         body: '카메라·센서로 손짓과 동작을 인식해 화면과 상호작용하는 인터페이스를 구현합니다.',
       },
     ],
