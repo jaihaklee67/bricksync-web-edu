@@ -6,7 +6,7 @@ const COPY = {
   ko: {
     title: '3D 메타버스 개발',
     subtitle: '상상을 현실로 만드는 AI 메타버스 & 게임 크리에이션',
-    subtitle2: '"AI로 재밌고 쉽게 나만의 3D 가상 공간을 만들고 놀아보자!"',
+    subtitle2: '"AI로 재밌고 쉽게 나만의 3D 가상 공간을 만들어 보자!"',
     cards: [
       {
         image: '/images/uefn_verse_hero.webp',
