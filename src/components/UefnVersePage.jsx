@@ -9,7 +9,7 @@ const COPY = {
     subtitle2: '"AI로 재밌고 쉽게 나만의 3D 가상 공간을 만들어 보자!"',
     cards: [
       {
-        image: '/images/uefn_verse_hero.webp',
+        image: '/images/uefn_verse_hero3.jpg',
         heading: 'UEFN 3D 콘텐츠 개발',
         body: '포트나이트 에디터와 Verse를 활용한 3D 메타버스 콘텐츠 제작',
         ctaLabel: '샘플 강의 보러가기 →',
@@ -33,7 +33,7 @@ const COPY = {
     subtitle2: '(Games, 3D Animation)',
     cards: [
       {
-        image: '/images/uefn_verse_hero.webp',
+        image: '/images/uefn_verse_hero3.jpg',
         heading: 'AI × UEFN 3D Content',
         body: '3D content creation training that combines AI technology with Epic Games\' UEFN.',
         ctaLabel: 'Watch Sample Lecture →',
