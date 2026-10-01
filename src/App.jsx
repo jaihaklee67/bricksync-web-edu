@@ -10,6 +10,7 @@ import { VisionPage } from './components/VisionPage';
 import { EducationPage } from './components/EducationPage';
 import { UefnVersePage } from './components/UefnVersePage';
 import { UnrealEnginePage } from './components/UnrealEnginePage';
+import { InteractiveMediaArtPage } from './components/InteractiveMediaArtPage';
 import { ComingSoonPage } from './components/ComingSoonPage';
 import { QuickStartPage } from './components/QuickStartPage';
 import { NewsPage } from './components/NewsPage';
@@ -131,7 +132,7 @@ export default function App() {
 
             {currentView === 'interactive-3d' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
-                <ComingSoonPage pageKey="interactive-3d" setCurrentView={setCurrentView} />
+                <InteractiveMediaArtPage setCurrentView={setCurrentView} />
               </div>
             )}
 
