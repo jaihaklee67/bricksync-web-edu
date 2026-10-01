@@ -17,8 +17,8 @@ const COPY = {
       },
       {
         image: '/images/uefn_verse_mcp.png',
-        heading: 'MCP 기반 기획 학습',
-        body: 'MCP를 활용한 게임 에셋, 텍스처, NPC 인터랙션 기획법 학습.',
+        heading: 'AI 활용 3D 게임 코스 개발',
+        body: 'UEFN MCP로 쉽고 빠르게 게임 맵, 규칙, 플레이 시스템 기획과 제작까지 한번에 학습.',
       },
       {
         image: '/images/uefn_verse_code.png',
