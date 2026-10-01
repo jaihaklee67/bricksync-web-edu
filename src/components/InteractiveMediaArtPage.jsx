@@ -2,35 +2,6 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Footer } from './Footer';
 
-const GRADIENTS = [
-  'linear-gradient(135deg, #FF8A65 0%, #D62976 55%, #4F5BD5 100%)',
-  'linear-gradient(135deg, #7FCBEA 0%, #1E8FD5 55%, #0068BD 100%)',
-  'linear-gradient(135deg, #7CD858 0%, #13A1A4 55%, #0068BD 100%)',
-];
-
-const SparkIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M12 3v4M12 17v4M3 12h4M17 12h4M5.6 5.6l2.8 2.8M15.6 15.6l2.8 2.8M18.4 5.6l-2.8 2.8M8.4 15.6l-2.8 2.8" />
-  </svg>
-);
-
-const ProjectorIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <rect x="2" y="7" width="14" height="10" rx="2" />
-    <circle cx="9" cy="12" r="2.5" />
-    <path d="M16 10.5 22 8v8l-6-2.5" />
-  </svg>
-);
-
-const HandIcon = (props) => (
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" {...props}>
-    <path d="M8 13V5.5a1.5 1.5 0 0 1 3 0V12" />
-    <path d="M11 11.5V4a1.5 1.5 0 0 1 3 0v8" />
-    <path d="M14 12V5.5a1.5 1.5 0 0 1 3 0V13" />
-    <path d="M17 7.5a1.5 1.5 0 0 1 3 0V14a6 6 0 0 1-6 6h-2a7 7 0 0 1-6-3.5l-2-3.5a1.5 1.5 0 0 1 2.6-1.5L8 13" />
-  </svg>
-);
-
 const COPY = {
   ko: {
     title: '인터렉티브 & 미디어아트',
@@ -38,20 +9,17 @@ const COPY = {
     subtitle2: '"공간을 가득 채우는 인터랙티브 아트 경험을 직접 만들어보자!"',
     cards: [
       {
-        gradient: GRADIENTS[0],
-        Icon: SparkIcon,
+        image: '/images/interactive_card1.jpg',
         heading: '실시간 인터랙티브 설치 아트',
         body: '센서와 실시간 그래픽을 결합해 관객 움직임에 반응하는 설치 작품을 제작합니다.',
       },
       {
-        gradient: GRADIENTS[1],
-        Icon: ProjectorIcon,
+        image: '/images/interactive_card2.jpg',
         heading: '프로젝션 맵핑 & 미디어 파사드',
         body: '건물·오브젝트 표면에 영상을 투사하는 프로젝션 맵핑과 미디어 파사드 연출을 학습합니다.',
       },
       {
-        gradient: GRADIENTS[2],
-        Icon: HandIcon,
+        image: '/images/interactive_card3.jpg',
         heading: '제스처 & 센서 기반 인터랙션',
         body: '카메라·센서로 손짓과 동작을 인식해 화면과 상호작용하는 인터페이스를 구현합니다.',
       },
@@ -63,20 +31,17 @@ const COPY = {
     subtitle2: '"Build an interactive art experience that fills the whole room!"',
     cards: [
       {
-        gradient: GRADIENTS[0],
-        Icon: SparkIcon,
+        image: '/images/interactive_card1.jpg',
         heading: 'Real-Time Interactive Installations',
         body: 'Combine sensors and real-time graphics to build installations that react to audience movement.',
       },
       {
-        gradient: GRADIENTS[1],
-        Icon: ProjectorIcon,
+        image: '/images/interactive_card2.jpg',
         heading: 'Projection Mapping & Media Facades',
         body: 'Learn to project visuals onto buildings and objects through projection mapping and media facade design.',
       },
       {
-        gradient: GRADIENTS[2],
-        Icon: HandIcon,
+        image: '/images/interactive_card3.jpg',
         heading: 'Gesture & Sensor-Based Interaction',
         body: 'Use cameras and sensors to recognize gestures and motion, building interfaces that respond to the body.',
       },
@@ -120,11 +85,12 @@ export const InteractiveMediaArtPage = ({ setCurrentView }) => {
               key={i}
               className="flex flex-col rounded-[2rem] sm:rounded-[3rem] border border-black/10 overflow-hidden bg-white shadow-[0_8px_40px_rgba(0,0,0,0.08)]"
             >
-              <div
-                className="w-full aspect-video overflow-hidden flex items-center justify-center"
-                style={{ background: c.gradient }}
-              >
-                <c.Icon className="w-[20%] h-[20%] text-white" />
+              <div className="w-full aspect-video overflow-hidden bg-black">
+                <img
+                  src={c.image}
+                  alt={c.heading}
+                  className="w-full h-full object-cover select-none pointer-events-none"
+                />
               </div>
               <div className="flex flex-col gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
                 <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.4rem,3.4vw,2.5rem)]">
