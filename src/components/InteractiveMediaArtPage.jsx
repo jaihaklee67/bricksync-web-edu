@@ -2,6 +2,9 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Footer } from './Footer';
 
+// Temporary — all 3 point at the channel until each card gets its own video.
+const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@BrickSync_PhysicalAI';
+
 const COPY = {
   ko: {
     title: '인터렉티브 & 미디어아트',
@@ -12,16 +15,22 @@ const COPY = {
         image: '/images/interactive_card1b.jpg',
         heading: 'LED 아나몰픽 콘텐츠 제작',
         body: '실감나는 3D 디지털 사이니지 콘텐츠 제작을 위한 아나몰픽 기법 영상 제작과정을 학습합니다.',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
       {
         image: '/images/interactive_card2b.jpg',
         heading: '프로젝션 맵핑 & 미디어 파사드',
         body: '건물·오브젝트 표면에 영상을 투사하는 프로젝션 맵핑과 미디어 파사드 연출을 학습합니다.',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
       {
         image: '/images/interactive_card3.jpg',
         heading: '센서 기반 실시간 인터랙션',
         body: '카메라·센서로 손짓과 동작을 인식해 화면과 상호작용하는 인터페이스를 구현합니다.',
+        ctaLabel: '샘플 강의 보러가기 →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
     ],
   },
@@ -34,16 +43,22 @@ const COPY = {
         image: '/images/interactive_card1b.jpg',
         heading: 'Real-Time Interactive Installations',
         body: 'Combine sensors and real-time graphics to build installations that react to audience movement.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
       {
         image: '/images/interactive_card2b.jpg',
         heading: 'Projection Mapping & Media Facades',
         body: 'Learn to project visuals onto buildings and objects through projection mapping and media facade design.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
       {
         image: '/images/interactive_card3.jpg',
         heading: 'Gesture & Sensor-Based Interaction',
         body: 'Use cameras and sensors to recognize gestures and motion, building interfaces that respond to the body.',
+        ctaLabel: 'Watch Sample Lecture →',
+        ctaHref: YOUTUBE_CHANNEL_URL,
       },
     ],
   },
@@ -92,13 +107,23 @@ export const InteractiveMediaArtPage = ({ setCurrentView }) => {
                   className="w-full h-full object-cover select-none pointer-events-none"
                 />
               </div>
-              <div className="flex flex-col gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
+              <div className="flex flex-col flex-1 gap-4 sm:gap-6 p-10 sm:p-12 md:p-14">
                 <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.4rem,3.4vw,2.5rem)]">
                   {c.heading}
                 </h3>
                 <p className="text-black/70 leading-relaxed break-keep text-[clamp(1.1rem,2.4vw,1.9rem)]">
                   {c.body}
                 </p>
+                {c.ctaHref && (
+                  <a
+                    href={c.ctaHref}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="self-end mt-auto inline-flex items-center gap-1.5 px-5 py-2.5 sm:px-6 sm:py-3 rounded-full bg-[#029DF7] text-white font-bold whitespace-nowrap hover:bg-black transition-colors text-[clamp(0.85rem,1.6vw,1.1rem)]"
+                  >
+                    {c.ctaLabel}
+                  </a>
+                )}
               </div>
             </div>
           ))}
