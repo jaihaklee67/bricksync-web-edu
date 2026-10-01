@@ -2,9 +2,6 @@ import React from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { Footer } from './Footer';
 
-// Temporary — all 3 point at the channel until each card gets its own video.
-const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/@BrickSync_PhysicalAI';
-
 const COPY = {
   ko: {
     title: '인터렉티브 & 미디어아트',
@@ -16,21 +13,21 @@ const COPY = {
         heading: 'LED 아나몰픽 콘텐츠 제작',
         body: '실감나는 3D 디지털 사이니지 콘텐츠 제작을 위한 아나몰픽 기법 영상 제작과정을 학습합니다.',
         ctaLabel: '샘플 강의 보러가기 →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtu.be/5vPIuSoeOn8?si=m61GEitZhv93OPli',
       },
       {
         image: '/images/interactive_card2b.jpg',
         heading: '프로젝션 맵핑 & 미디어 파사드',
         body: '건물·오브젝트 표면에 영상을 투사하는 프로젝션 맵핑과 미디어 파사드 연출을 학습합니다.',
         ctaLabel: '샘플 강의 보러가기 →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtu.be/tr6tKfYM6qA?si=yoGuhGOJeggTsEzE',
       },
       {
         image: '/images/interactive_card3.jpg',
         heading: '센서 기반 실시간 인터랙션',
         body: '카메라·센서로 손짓과 동작을 인식해 화면과 상호작용하는 인터페이스를 구현합니다.',
         ctaLabel: '샘플 강의 보러가기 →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtube.com/playlist?list=PLLRlLTtt5Jto&si=Td9x-bt16RHem3li',
       },
     ],
   },
@@ -44,21 +41,21 @@ const COPY = {
         heading: 'Real-Time Interactive Installations',
         body: 'Combine sensors and real-time graphics to build installations that react to audience movement.',
         ctaLabel: 'Watch Sample Lecture →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtu.be/5vPIuSoeOn8?si=m61GEitZhv93OPli',
       },
       {
         image: '/images/interactive_card2b.jpg',
         heading: 'Projection Mapping & Media Facades',
         body: 'Learn to project visuals onto buildings and objects through projection mapping and media facade design.',
         ctaLabel: 'Watch Sample Lecture →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtu.be/tr6tKfYM6qA?si=yoGuhGOJeggTsEzE',
       },
       {
         image: '/images/interactive_card3.jpg',
         heading: 'Gesture & Sensor-Based Interaction',
         body: 'Use cameras and sensors to recognize gestures and motion, building interfaces that respond to the body.',
         ctaLabel: 'Watch Sample Lecture →',
-        ctaHref: YOUTUBE_CHANNEL_URL,
+        ctaHref: 'https://youtube.com/playlist?list=PLLRlLTtt5Jto&si=Td9x-bt16RHem3li',
       },
     ],
   },
