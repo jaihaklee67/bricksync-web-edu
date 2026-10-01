@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useLanguage } from '../context/LanguageContext';
 import { content } from '../data/content';
+import { pageContent } from '../data/searchContent';
 import { Globe, Menu, X, ChevronDown, Search } from 'lucide-react';
 
 export const Navbar = ({ currentView, setCurrentView }) => {
@@ -38,10 +39,19 @@ export const Navbar = ({ currentView, setCurrentView }) => {
     };
   }, [openDesktopSubmenu]);
 
-  const searchIndex = t.menu.flatMap((item) => [
+  // Nav labels first (menu + submenu titles), then phrases pulled from
+  // inside each page's own body content (searchContent.js) — so a query
+  // like "AX" matches CompanyPage's copy even though "AX" isn't a nav label.
+  const navSearchIndex = t.menu.flatMap((item) => [
     { title: item.title, view: item.view },
     ...(item.submenu ? item.submenu.map((sub) => ({ title: sub.title, view: sub.view })) : [])
   ]);
+  const contentSearchIndex = Object.entries(pageContent[lang] || {}).flatMap(([view, phrases]) =>
+    phrases.map((title) => ({ title, view }))
+  );
+  const searchIndex = [...navSearchIndex, ...contentSearchIndex].filter(
+    (entry, i, arr) => arr.findIndex((e) => e.title.toLowerCase() === entry.title.toLowerCase()) === i
+  );
 
   const searchResults = searchQuery.trim()
     ? searchIndex.filter((entry) => entry.title.toLowerCase().includes(searchQuery.trim().toLowerCase())).slice(0, 6)
