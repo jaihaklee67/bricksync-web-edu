@@ -9,9 +9,9 @@ const COPY = {
     subtitle2: '"공간을 가득 채우는 인터랙티브 아트 경험을 직접 만들어보자!"',
     cards: [
       {
-        image: '/images/interactive_card1.jpg',
+        image: '/images/interactive_card1b.jpg',
         heading: 'LED 아나몰픽 콘텐츠 제작',
-        body: '센서와 실시간 그래픽을 결합해 관객 움직임에 반응하는 설치 작품을 제작합니다.',
+        body: '실감나는 3D 디지털 사이니지 콘텐츠 제작을 위한 아나몰픽 기법 영상 제작과정을 학습합니다.',
       },
       {
         image: '/images/interactive_card2b.jpg',
@@ -31,7 +31,7 @@ const COPY = {
     subtitle2: '"Build an interactive art experience that fills the whole room!"',
     cards: [
       {
-        image: '/images/interactive_card1.jpg',
+        image: '/images/interactive_card1b.jpg',
         heading: 'Real-Time Interactive Installations',
         body: 'Combine sensors and real-time graphics to build installations that react to audience movement.',
       },
