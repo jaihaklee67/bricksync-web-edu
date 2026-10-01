@@ -71,7 +71,7 @@ export const UnrealEnginePage = ({ setCurrentView }) => {
       {/* Hero: full-bleed Unreal Engine scene, flush under the navbar */}
       <div className="relative w-full aspect-[16/9] sm:aspect-[21/9] overflow-hidden -mt-20 sm:-mt-24 md:-mt-28">
         <img
-          src="/images/unreal_hero.jpg"
+          src="/images/unreal_hero2.jpg"
           alt="Unreal Engine"
           className="absolute inset-0 w-full h-full object-cover select-none pointer-events-none"
         />
