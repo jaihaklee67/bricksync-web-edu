@@ -22,8 +22,8 @@ const COPY = {
       },
       {
         image: '/images/uefn_verse_code.png',
-        heading: 'Verse 코딩 & 멀티플레이',
-        body: 'Verse 코딩으로 고급 게임 규칙 설계 및 멀티플레이 시스템 구축.',
+        heading: 'Verse 활용 피지컬 AI 로보틱스',
+        body: 'Verse 코딩으로 로봇에 행동 인식 및 학습알고리즘 구현',
       },
     ],
   },
