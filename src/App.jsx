@@ -31,6 +31,7 @@ const VIEW_TO_PATH = {
   education: '/legofortnite',
   'uefn-verse': '/uefn-verse',
   'unreal-engine': '/unreal-engine',
+  'interactive-3d': '/interactive-3d',
   quickstart: '/quickstart',
   download: '/download',
   contact: '/contact',
@@ -125,6 +126,12 @@ export default function App() {
             {currentView === 'unreal-engine' && (
               <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
                 <UnrealEnginePage setCurrentView={setCurrentView} />
+              </div>
+            )}
+
+            {currentView === 'interactive-3d' && (
+              <div className="w-full h-full overflow-y-auto overflow-x-hidden scroll-smooth relative custom-scrollbar pt-20 sm:pt-24 md:pt-28">
+                <ComingSoonPage pageKey="interactive-3d" setCurrentView={setCurrentView} />
               </div>
             )}
 

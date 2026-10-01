@@ -24,8 +24,9 @@ export const content = {
           view: "education",
           submenu: [
             { title: "레고 포트나이트", view: "education" },
-            { title: "UEFN&Verse", view: "uefn-verse" },
-            { title: "언리얼 엔진", view: "unreal-engine" }
+            { title: "3D 메타버스 개발", view: "uefn-verse" },
+            { title: "AI 시뮬레이션", view: "unreal-engine" },
+            { title: "인터렉티브 & 미디어아트", view: "interactive-3d" }
           ]
         },
         {
@@ -394,8 +395,9 @@ export const content = {
           view: "education",
           submenu: [
             { title: "LEGO Fortnite", view: "education" },
-            { title: "UEFN&Verse", view: "uefn-verse" },
-            { title: "Unreal Engine", view: "unreal-engine" }
+            { title: "3D Metaverse Development", view: "uefn-verse" },
+            { title: "AI Simulation", view: "unreal-engine" },
+            { title: "Interactive & Media Art", view: "interactive-3d" }
           ]
         },
         {

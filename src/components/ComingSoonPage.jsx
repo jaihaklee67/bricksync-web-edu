@@ -23,6 +23,16 @@ const COPY = {
       desc: 'Unreal Engine based educational content is coming soon.'
     }
   },
+  'interactive-3d': {
+    ko: {
+      title: '인터렉티브 & 미디어아트',
+      desc: '인터렉티브 & 미디어아트 교육 콘텐츠를 준비 중입니다.'
+    },
+    en: {
+      title: 'Interactive & Media Art',
+      desc: 'Interactive & media art educational content is coming soon.'
+    }
+  },
   'news': {
     ko: {
       title: '알림 & 뉴스',
