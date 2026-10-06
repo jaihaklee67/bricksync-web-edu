@@ -106,11 +106,26 @@ export const AboutPage = ({ setCurrentView }) => {
 
         {/* Section 1: Overview (navy text panel + dashboard/photo showcase) */}
         {lang === 'ko' ? (
-          <img
-            src="/images/about_overview_ko.png"
-            alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
-            className="w-[calc(100%-1.5rem)] sm:w-full max-w-[1600px] h-auto object-contain flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 rounded-2xl"
-          />
+          <>
+            <img
+              src="/images/about_overview_ko.png"
+              alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
+              className="hidden sm:block w-full max-w-[1600px] h-auto object-contain flex-shrink-0 mt-24 mb-32 rounded-2xl"
+            />
+            {/* Mobile: the 16:9 composite is too small to read, so stack the text and the photo collage vertically */}
+            <div className="sm:hidden w-full flex flex-col items-center gap-6 px-3 mt-12 mb-16">
+              <img
+                src="/images/about_app_text_m.png"
+                alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
+                className="w-full h-auto object-contain select-none pointer-events-none"
+              />
+              <img
+                src="/images/about_app_photos_m.png"
+                alt="브릭싱크 App 대시보드, 더 브릭 아일랜드 포트나이트 맵, 수업 현장 사진"
+                className="w-full h-auto object-contain select-none pointer-events-none"
+              />
+            </div>
+          </>
         ) : (
         <div className="w-full max-w-[1600px] md:aspect-video relative flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 flex flex-col md:flex-row overflow-hidden rounded-2xl">
           {/* Left: live-text overview panel */}

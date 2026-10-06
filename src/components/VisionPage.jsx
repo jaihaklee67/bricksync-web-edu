@@ -255,7 +255,12 @@ export const VisionPage = ({ setCurrentView }) => {
                   className="w-36 sm:w-44 md:w-52 h-auto object-contain rounded-xl shrink-0"
                 />
                 <div className="flex flex-col items-center sm:items-start gap-2 sm:gap-4">
-                  <h3 className="text-black font-bold leading-snug break-keep text-[clamp(1.25rem,2.5vw,2rem)]">
+                  <h3
+                    className={`text-black font-bold leading-snug break-keep text-[clamp(1.25rem,2.5vw,2rem)] ${
+                      lang === 'ko' ? 'max-sm:whitespace-nowrap max-sm:text-[length:var(--book-title-fs)]' : ''
+                    }`}
+                    style={lang === 'ko' ? { '--book-title-fs': 'calc((100vw - 120px) / 17)' } : undefined}
+                  >
                     {b.title}
                   </h3>
                   <p className="text-black/80 leading-relaxed text-balance break-keep text-[clamp(0.95rem,1.7vw,1.25rem)]">

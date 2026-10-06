@@ -258,7 +258,7 @@ export const Hero = ({ setCurrentView, goToEducationStage }) => {
           }}
         >
 
-          <p className="w-full text-[clamp(0.44rem,2.88vw,1.8rem)] min-[853px]:text-[28.8px] min-[1900px]:text-[35.2px] font-semibold text-black leading-snug text-center mb-4 break-keep whitespace-nowrap">
+          <p className={`w-full ${lang === 'ko' ? 'text-[clamp(0.44rem,3.6vw,1.8rem)]' : 'text-[clamp(0.44rem,2.88vw,1.8rem)]'} min-[853px]:text-[28.8px] min-[1900px]:text-[35.2px] font-semibold text-black leading-snug text-center mb-4 break-keep whitespace-nowrap`}>
             {t.statIntro1}
             <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
             {t.statIntro2}
@@ -267,7 +267,7 @@ export const Hero = ({ setCurrentView, goToEducationStage }) => {
             <br className="min-[1900px]:hidden" /><span className="hidden min-[1900px]:inline"> </span>
             {t.statIntro4}
           </p>
-          <p className="text-[clamp(0.4rem,2.4vw,1.5rem)] min-[853px]:text-[24px] min-[1900px]:text-[29.33px] font-semibold text-black leading-snug text-center mb-10 sm:mb-14 break-keep whitespace-nowrap">
+          <p className={`${lang === 'ko' ? 'text-[clamp(0.4rem,3vw,1.5rem)]' : 'text-[clamp(0.4rem,2.4vw,1.5rem)]'} min-[853px]:text-[24px] min-[1900px]:text-[29.33px] font-semibold text-black leading-snug text-center mb-10 sm:mb-14 break-keep whitespace-nowrap`}>
             {t.statLabel1} <span className="text-[1.5em] font-extrabold">100%</span>, {t.statLabel2} <span className="text-[1.5em] font-extrabold">100%</span>
           </p>
 
