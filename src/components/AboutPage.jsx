@@ -115,7 +115,7 @@ export const AboutPage = ({ setCurrentView }) => {
             {/* Mobile: the 16:9 composite is too small to read, so stack the text and the photo collage vertically */}
             <div className="sm:hidden w-full flex flex-col items-center gap-6 px-3 mt-12 mb-16">
               <img
-                src="/images/about_app_text_m.png"
+                src="/images/about_app_text_m2.png"
                 alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
                 className="w-full h-auto object-contain select-none pointer-events-none"
               />
