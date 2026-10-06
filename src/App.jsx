@@ -17,6 +17,7 @@ import { NewsPage } from './components/NewsPage';
 import { FAQPage } from './components/FAQPage';
 import { DownloadPage } from './components/DownloadPage';
 import { ContactPage } from './components/ContactPage';
+import { PageMeta } from './components/PageMeta';
 
 // Every page gets its own real URL (so it can be linked, bookmarked, and
 // refreshed directly) instead of the whole site living at one address with
@@ -59,6 +60,7 @@ export default function App() {
 
   return (
     <LanguageProvider>
+      <PageMeta currentView={currentView} />
       <div className="relative w-screen h-screen overflow-hidden select-none bg-[#0a2754]">
         
         {/* 1. Global Full-Bleed Background Image (100% Screen Fill) */}
