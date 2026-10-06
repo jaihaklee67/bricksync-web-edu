@@ -21,7 +21,7 @@ const COPY = {
         body: 'UEFN MCP로 쉽고 빠르게 게임 맵, 규칙, 플레이 시스템 기획과 제작까지 한번에 학습.',
       },
       {
-        image: '/images/uefn_verse_code.png',
+        image: '/images/uefn_verse_robotics.jpg',
         heading: 'Verse 활용 피지컬 AI 로보틱스',
         body: 'Verse 코딩으로 로봇에 행동 인식 및 학습알고리즘 구현',
       },
@@ -45,7 +45,7 @@ const COPY = {
         body: 'Learn to plan game assets, textures, and NPC interactions using MCP.',
       },
       {
-        image: '/images/uefn_verse_code.png',
+        image: '/images/uefn_verse_robotics.jpg',
         heading: 'Verse Coding & Multiplayer',
         body: 'Design advanced game rules and build multiplayer systems with Verse coding.',
       },
