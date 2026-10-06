@@ -88,7 +88,7 @@ export const Navbar = ({ currentView, setCurrentView }) => {
         </button>
 
         {/* Center Desktop Navigation Menu */}
-        <nav ref={desktopNavRef} className="hidden md:flex items-center justify-center flex-1 min-w-0 px-2 lg:px-6 gap-[clamp(10px,1.6vw,40px)]">
+        <nav ref={desktopNavRef} className="hidden min-[1140px]:flex items-center justify-center flex-1 min-w-0 px-2 lg:px-6 gap-[clamp(10px,1.6vw,40px)]">
           {t.menu.map((item) => {
             const isActive = item.view === currentView ||
               (item.submenu && item.submenu.some((sub) => sub.view === currentView));
@@ -143,7 +143,7 @@ export const Navbar = ({ currentView, setCurrentView }) => {
         </nav>
 
         {/* Right: Search + Language + CTA */}
-        <div className="hidden md:flex items-center gap-3 lg:gap-4 flex-shrink-0">
+        <div className="hidden min-[1140px]:flex items-center gap-3 lg:gap-4 flex-shrink-0">
           <button
             onClick={toggleLang}
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-full border border-black/15 text-sm font-semibold text-black hover:border-[#029DF7] hover:text-[#029DF7] transition-colors font-poppins outline-none"
@@ -201,7 +201,7 @@ export const Navbar = ({ currentView, setCurrentView }) => {
         </div>
 
         {/* Mobile Hamburger Button */}
-        <div className="flex md:hidden items-center gap-2">
+        <div className="flex min-[1140px]:hidden items-center gap-2">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-xl bg-black/5 text-black hover:text-[#029DF7] transition-colors outline-none"
@@ -213,7 +213,7 @@ export const Navbar = ({ currentView, setCurrentView }) => {
 
       {/* Mobile Menu Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-black/10 shadow-[0_8px_24px_rgba(0,0,0,0.15)] px-6 py-5 flex flex-col gap-1 font-poppins z-50">
+        <div className="min-[1140px]:hidden absolute top-full left-0 right-0 bg-white border-t border-black/10 shadow-[0_8px_24px_rgba(0,0,0,0.15)] px-6 py-5 flex flex-col gap-1 font-poppins z-50">
           <form onSubmit={handleSearchSubmit} className="relative mb-3">
             <input
               type="text"
