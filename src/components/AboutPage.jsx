@@ -109,7 +109,7 @@ export const AboutPage = ({ setCurrentView }) => {
           <img
             src="/images/about_overview_ko.png"
             alt="브릭싱크 App - 레고 스파이크 + 레고 포트나이트"
-            className="w-full max-w-[1600px] h-auto object-contain flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 rounded-2xl"
+            className="w-[calc(100%-1.5rem)] sm:w-full max-w-[1600px] h-auto object-contain flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 rounded-2xl"
           />
         ) : (
         <div className="w-full max-w-[1600px] md:aspect-video relative flex-shrink-0 mt-16 sm:mt-24 mb-20 sm:mb-32 flex flex-col md:flex-row overflow-hidden rounded-2xl">
@@ -180,7 +180,7 @@ export const AboutPage = ({ setCurrentView }) => {
 
             <div className="w-full max-w-[1440px] flex flex-col items-center pb-12 sm:pb-16 px-4 sm:px-8">
               <div className="w-full grid grid-cols-1 sm:grid-cols-3 gap-5 sm:gap-6">
-                {['/images/about_core_1.png', '/images/about_core_2.png', '/images/about_core_3.png'].map((src) => (
+                {['/images/about_core_1_v2.png', '/images/about_core_2_v2.png', '/images/about_core_3_v2.png'].map((src) => (
                   <img key={src} src={src} alt="" className="w-full h-auto object-contain" />
                 ))}
               </div>

@@ -22,7 +22,8 @@ const COPY = {
     subtitle1: '학교 커리큘럼, 교사 연수, 교육 파트너십에 대해 궁금한 점이 있으신가요?',
     subtitle2: '공인 전문팀에게 문의주시면 브릭싱크와 함께할 수 있는 다양한 가능성을 안내해드립니다.',
     sendInquiry: '문의 보내기',
-    formDesc: '문의 카테고리를 선택하고 내용을 입력해주세요. 빠르게 답변드리겠습니다.',
+    formDesc: '문의 카테고리를 선택하고 내용을 입력해주세요.',
+    formDescLine2: '빠르게 답변드리겠습니다.',
     inquiryCategory: '문의 카테고리',
     categories: [
       { id: 'school', label: '학교 커리큘럼', desc: 'K-12 및 캠프 도입' },
@@ -156,7 +157,12 @@ export const ContactPage = ({ setCurrentView }) => {
             <h1 className="text-[clamp(1.75rem,4.6vw,3.25rem)] font-bold text-white tracking-tight leading-tight mb-3 sm:mb-4 break-keep">
               {t.title}
             </h1>
-            <div className="text-white/95 text-[clamp(0.85rem,1.7vw,1.25rem)] font-normal leading-relaxed flex flex-col gap-1 sm:gap-1.5 break-keep">
+            <div
+              className={`text-white/95 font-normal leading-relaxed flex flex-col gap-1 sm:gap-1.5 ${
+                lang === 'ko' ? 'whitespace-nowrap' : 'text-[clamp(0.85rem,1.7vw,1.25rem)] break-keep'
+              }`}
+              style={lang === 'ko' ? { fontSize: 'min(clamp(0.85rem, 1.7vw, 1.25rem), calc((100vw - 2rem) / 37.5))' } : undefined}
+            >
               <p>{t.subtitle1}</p>
               <p>{t.subtitle2}</p>
             </div>
@@ -182,6 +188,12 @@ export const ContactPage = ({ setCurrentView }) => {
                     </h2>
                     <p className="text-xs sm:text-sm text-slate-500 leading-relaxed break-keep">
                       {t.formDesc}
+                      {t.formDescLine2 && (
+                        <>
+                          <br className="sm:hidden" />{' '}
+                          {t.formDescLine2}
+                        </>
+                      )}
                     </p>
                   </div>
 

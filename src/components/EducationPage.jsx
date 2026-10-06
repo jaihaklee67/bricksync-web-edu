@@ -144,9 +144,11 @@ export const EducationPage = ({ setCurrentView, scrollTarget, onScrollTargetHand
   }, [scrollTarget, lang]);
 
   return (
-    <div className="relative z-10 w-full min-h-full flex flex-col items-center justify-between select-none font-poppins bg-white -mt-20 sm:-mt-24 md:-mt-28 pt-20 sm:pt-24 md:pt-28">
+    <div className="relative z-10 w-full min-h-full flex flex-col items-center justify-between select-none font-poppins bg-white -mt-20 sm:-mt-24 md:-mt-28">
 
-      <div className="w-full flex flex-col items-center flex-1 py-8 sm:py-12 md:py-14 px-4 sm:px-8 md:px-12">
+      <div className="w-full flex flex-col items-center flex-1 pb-8 sm:pb-12 md:pb-14 px-4 sm:px-8 md:px-12">
+        {/* Top gap above the first box = the gap below it (same margin class), instead of the old stacked padding */}
+        <div aria-hidden="true" className={sections[0].mb} />
         {sections.map((s, i) => (
           <div
             key={(s.src || 'checklist') + i}
